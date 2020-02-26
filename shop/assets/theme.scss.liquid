@@ -11678,7 +11678,6 @@ https://flickity.metafizzy.co
 }
 
 
-
 .carousel:after {
   content: 'flickity';
   display: none; /* hide :after */
@@ -11703,3 +11702,41 @@ https://flickity.metafizzy.co
      width: 8px;
      height: 8px;
    }
+
+/*------  Picto advantages --------*/
+
+.PictoAdvantage__block{
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.PictoAdvantage__border:not(:first-child):after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    /* width: 100%; */
+    padding-top: 60px;
+    border-right: 1px solid grey;
+    margin: auto;
+    position: absolute;
+    top: 35%;
+}
+
+.PictoAdvantage__image{
+  max-width: 40px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.PictoAdvantage__text{
+  max-width: 170px;
+  margin: auto;
+  line-height: 2em;
+}
+
+@include av-mq('phone') {
+  .PictoAdvantage__border:not(:first-child):after {
+      display: none;
+  } 
+}
