@@ -1837,7 +1837,7 @@ body {
     }
 
     .u-h4 {
-      font-size: 19px;
+      font-size: 20px;
     }
 
     .u-h5 {
@@ -7678,7 +7678,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 }
 
 .Footer__Inner + .Footer__Aside {
-  margin-top: 65px;
+  // margin-top: 65px;
 }
 
 .Footer__ThemeAuthor {
@@ -7734,7 +7734,7 @@ $vertical-spacing-two-products-per-row  : 0px;
   }
 
   .Footer__Inner + .Footer__Aside {
-    margin-top: 80px;
+    // margin-top: 80px;
   }
 
   .Footer__StoreName {
@@ -7775,11 +7775,17 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 @include av-mq('desk') {
   .Footer__Block--text {
-    flex-basis: 460px;
+    flex-basis: 270px;
   }
 
   .Footer__Block--newsletter {
     flex-basis: 375px;
+  }
+}
+
+@include av-mq('widescreen') {
+  .Footer__Block--text {
+    flex-basis: 400px;
   }
 }
 .GiftCard {
@@ -11768,7 +11774,7 @@ https://flickity.metafizzy.co
 }
 
 .NewsletterSubtitle{
-  text-shadow: none;  
+  text-shadow: none;
 }
 
 @include av-mq('phone') {
@@ -11786,5 +11792,47 @@ https://flickity.metafizzy.co
        padding: 0;
        margin-left: 15px;
      }
+  }
+}
+
+/*------  Footer --------*/
+
+.Footer{
+  .NewsletterText{
+    width: 70%;
+  }
+
+  .Form__Submit{
+    width: 25%;
+    font-size: 2em;
+    padding: 3px 0;
+    background-color: white;
+    color: black;
+  }
+}
+.FooterPayment__title{
+  margin-bottom: 0;
+}
+
+.FooterPayments{
+   margin-top: 20px;
+   svg {
+     width: 38px;
+     height: 24px;
+     filter: grayscale(100%);         /* styles for the pictos from shopify */
+     -webkit-filter: grayscale(100%);
+   }
+}
+
+.PaymentPicto{
+  max-width: 60px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+
+@include av-mq('phone') {
+  .Footer__PaymentList{
+     margin: 0;
   }
 }
