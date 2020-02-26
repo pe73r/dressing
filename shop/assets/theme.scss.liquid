@@ -1793,7 +1793,7 @@ body {
     }
   } @else if $heading-font-size == 'normal' {
     .u-h1 {
-      font-size: 22px;
+      font-size: 30px;
     }
 
     .u-h2 {
@@ -1825,11 +1825,11 @@ body {
     }
   } @else {
     .u-h1 {
-      font-size: 40px;
+      font-size: 30px;
     }
 
     .u-h2 {
-      font-size: 30px;
+      font-size: 28px;
     }
 
     .u-h3 {
@@ -5449,7 +5449,8 @@ select::-ms-expand {
 
 @include av-mq('tablet-and-up') {
   .SectionHeader__Heading--emphasize {
-    font-size: to-size(22px);
+    font-size: to-size(50px);
+    margin-bottom: 0;
   }
 }
 
@@ -5487,7 +5488,7 @@ select::-ms-expand {
   }
 
   .SectionHeader__ButtonWrapper {
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   .SectionFooter {
@@ -6701,11 +6702,11 @@ select::-ms-expand {
 
 @include av-mq('phone') {
   .CollectionList--grid {
-    margin: -12px 12px 12px 12px;
+    // margin: -12px 12px 12px 12px;
   }
 
   .CollectionList--grid .CollectionItem {
-    padding: 12px;
+    // padding: 12px;
   }
 
   .CollectionList:not(.CollectionList--grid) {
@@ -7543,7 +7544,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 @include av-mq('tablet-and-up') {
   .FeatureText__Content {
-    max-width: 430px;
+    max-width: 600px;
     margin: 0 auto;
   }
 
@@ -10977,7 +10978,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 @include av-mq('lap-and-up') {
   .Slideshow__Content {
-    padding: 0 70px;
+    padding: 0 100px;
   }
 }
 /**
@@ -11701,6 +11702,17 @@ https://flickity.metafizzy.co
   }
 }
 
+/*------  Slideshow --------*/
+
+.ButtonSlideshow{
+  min-width: 200px;
+}
+
+
+/*------  Collection list --------*/
+.CollectionList__Header{
+   margin-top: 70px;
+}
 
 /*------  Picto advantages --------*/
 

@@ -10,6 +10,12 @@
 {%- endcapture -%}
 
 <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="collection-list">
+  {% if section.settings.title != blank %}
+    <div class="CollectionList__Header SectionHeader desktop-only align-center">
+      <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title }}</h2>
+    </div>
+  {% endif %}
+
   {%- capture collection_items -%}
     {%- for block in section.blocks -%}
       {%- assign collection = collections[block.settings.collection] -%}
@@ -34,14 +40,14 @@
     color: {{ section.settings.text_color }};
   }
 
-  #section-{{ section.id }} .CollectionItem__Link {
+  /* #section-{{ section.id }} .CollectionItem__Link {
     color: {{ section.settings.button_color }};
     border-color: {{ section.settings.text_color }};
   }
 
   #section-{{ section.id }} .CollectionItem__Link::before {
     background-color: {{ section.settings.text_color }};
-  }
+  } */
 
   @media (-moz-touch-enabled: 0), (hover: hover) {
     #section-{{ section.id }} .CollectionItem__Link:hover {
@@ -76,6 +82,12 @@
       "default": "normal"
     },
     {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "PARCOURIR NOS CATEGORIES"
+    },
+    {
       "type": "checkbox",
       "id": "add_spacing",
       "label": "Add spacing",
@@ -98,12 +110,6 @@
       "id": "text_color",
       "label": "Text",
       "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "button_color",
-      "label": "Button text",
-      "default": "#363636"
     }
   ],
   "blocks": [
