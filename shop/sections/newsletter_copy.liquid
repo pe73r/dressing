@@ -1,4 +1,4 @@
-<section id="section-{{ section.id }}" class="HomepageNewsletter">
+<section id="section-{{ section.id }}">
   {%- capture mobile_size -%}750x{% if section.settings.image.height >= 960 %}960{% else %}{{ section.settings.image.height }}{% endif %}{%- endcapture -%}
 
   <div class="FlexboxIeFix">
@@ -23,19 +23,12 @@
 
       <div class="ImageHero__ContentOverlay">
         <header class="SectionHeader SectionHeader--center">
-
-          {%- if section.settings.picto != blank -%}
-             <div class="NewsletterPicto">
-               <img src="{{ section.settings.picto | img_url:'master' }}" alt="">
-             </div>
-          {% endif %}
-
-          {%- if section.settings.title != blank -%}
-            <h2 class="NewsletterTitle SectionHeader__Heading Heading u-h3">{{ section.settings.title | escape }}</h2>
+          {%- if section.settings.subheading != blank -%}
+            <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
           {%- endif -%}
 
-          {%- if section.settings.subheading != blank -%}
-            <h3 class="NewsletterSubtitle SectionHeader__SubHeading u-h2">{{ section.settings.subheading | escape }}</h3>
+          {%- if section.settings.title != blank -%}
+            <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
           {%- endif -%}
 
           {%- if section.settings.content != blank -%}
@@ -55,12 +48,10 @@
               <p class="Form__Alert Alert Alert--error">{{ form.errors.messages['email'] }}</p>
             {%- endif -%}
 
-            <div class="Newsletter__Inner NewsletterFlex">
-              <div class="NewsletterText">
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <input type="email" name="contact[email]" class="Form__Input" aria-label="{{ 'home_page.newsletter.input' | t }}" placeholder="{{ 'home_page.newsletter.input' | t }}" required>
-              </div>
-              <button type="submit" class="Form__Submit Button"><span>&#8594;</span></button>
+            <div class="Newsletter__Inner">
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <input type="email" name="contact[email]" class="Form__Input" aria-label="{{ 'home_page.newsletter.input' | t }}" placeholder="{{ 'home_page.newsletter.input' | t }}" required>
+              <button type="submit" class="Form__Submit Button Button--primary">{{ 'home_page.newsletter.submit' | t }}</button>
             </div>
           {%- endif -%}
         {%- endform -%}
@@ -76,16 +67,17 @@
   }
 
   #section-{{ section.id }} .Form__Submit {
-    color: {{ section.settings.button_text_color }};
+    border-color: {{ section.settings.text_color }};
+    color: {{ section.settings.button_color }};
   }
 
   #section-{{ section.id }} .Form__Submit::before {
-    background-color: {{ section.settings.button_bg_color }};
+    background-color: {{ section.settings.text_color }};
   }
 
   @media (-moz-touch-enabled: 0), (hover: hover) {
     #section-{{ section.id }} .Form__Submit:hover {
-      background-color: {{ section.settings.button_hover }};
+      color: {{ section.settings.text_color }};
     }
   }
 </style>
@@ -117,17 +109,8 @@
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Background",
+      "label": "Image",
       "info": "1500 x 800px .jpg recommended"
-    },
-    {
-      "type": "image_picker",
-      "id": "picto",
-      "label": "Image"
-    },
-    {
-      "type": "header",
-      "content": "colors"
     },
     {
       "type": "color",
@@ -137,20 +120,8 @@
     },
     {
       "type": "color",
-      "id": "button_text_color",
-      "label": "Arrow",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "button_bg_color",
-      "label": "Button background",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "button_hover",
-      "label": "Button Hover",
+      "id": "button_color",
+      "label": "Button text",
       "default": "#000000"
     },
     {

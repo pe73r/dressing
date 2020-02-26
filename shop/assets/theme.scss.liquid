@@ -1726,15 +1726,15 @@ body {
   }
 } @else {
   .u-h1 {
-    font-size: 24px;
+    font-size: 40px;
   }
 
   .u-h2 {
-    font-size: 22px;
+    font-size: 30px;
   }
 
   .u-h3 {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .u-h4 {
@@ -1825,15 +1825,15 @@ body {
     }
   } @else {
     .u-h1 {
-      font-size: 24px;
+      font-size: 40px;
     }
 
     .u-h2 {
-      font-size: 22px;
+      font-size: 30px;
     }
 
     .u-h3 {
-      font-size: 20px;
+      font-size: 25px;
     }
 
     .u-h4 {
@@ -11659,6 +11659,15 @@ https://flickity.metafizzy.co
 
 .section-text-adverts{
 
+  .carousel-cell {
+    width: 33%;
+    margin-right: 10px;
+  }
+
+  .carousel:after {
+    content: 'flickity';
+    display: none; /* hide :after */
+  }
 
 }
 
@@ -11672,19 +11681,10 @@ https://flickity.metafizzy.co
   margin: 0;
 }
 
-.carousel-cell {
-  width: 33%;
-  margin-right: 10px;
-}
-
-
-.carousel:after {
-  content: 'flickity';
-  display: none; /* hide :after */
-}
 
 @media screen and ( max-width: 800px ) {
       /* disable Flickity for large devices */
+.section-text-adverts{
   .carousel:after {
     content: '';
   }
@@ -11692,16 +11692,9 @@ https://flickity.metafizzy.co
     width: 100%;
     margin-right: 10px;
       }
-    }
+  }
+}
 
-  .flickity-page-dots {
-    bottom: -40px;
-
-   }
-   .flickity-page-dots .dot {
-     width: 8px;
-     height: 8px;
-   }
 
 /*------  Picto advantages --------*/
 
@@ -11738,5 +11731,60 @@ https://flickity.metafizzy.co
 @include av-mq('phone') {
   .PictoAdvantage__border:not(:first-child):after {
       display: none;
-  } 
+  }
+}
+
+/*------  Homepage Newsletter --------*/
+
+.HomepageNewsletter{
+   .Form__Input{
+      border: none;
+      border-bottom: 1px solid #000;
+      padding: 15px 0;
+       &::placeholder {
+          color: lightgrey;
+        }
+   }
+   .Form__Submit{
+     font-size: 2.3em;
+     padding: 5px 25px;
+   }
+}
+
+.NewsletterFlex{
+   display: flex;
+   align-items: flex-end;
+   justify-content: center;
+}
+
+.NewsletterPicto{
+  max-width: 250px;
+  margin: auto;
+}
+
+.NewsletterTitle{
+  margin: 0;
+  text-shadow: none;
+}
+
+.NewsletterSubtitle{
+  text-shadow: none;  
+}
+
+@include av-mq('phone') {
+
+  .NewsletterText{
+     width: 70%;
+  }
+
+  .HomepageNewsletter{
+    margin-bottom: 40px;
+
+     .Form__Submit{
+       width: 20%;
+       margin-top: 0;
+       padding: 0;
+       margin-left: 15px;
+     }
+  }
 }
