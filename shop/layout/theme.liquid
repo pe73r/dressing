@@ -2,7 +2,7 @@
 
 <html class="no-js" lang="{{ shop.locale }}">
   <head>
-    <meta charset="utf-8"> 
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
     <meta name="theme-color" content="{{ settings.accent_color }}">
@@ -26,6 +26,8 @@
     {{ content_for_header }}
 
     <link rel="stylesheet" href="{{ 'theme.scss.css' | asset_url }}">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
 
     <script>
       // This allows to expose several variables to the global scope, to be used in scripts
@@ -93,6 +95,8 @@
     <script src="{{ 'libs.min.js' | asset_url }}" defer></script>
     <script src="{{ 'theme.min.js' | asset_url }}" defer></script>
     <script src="{{ 'custom.js' | asset_url }}" defer></script>
+    <!-- <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> -->
+
 
     <script>
       (function () {
@@ -133,6 +137,7 @@
     <div class="PageContainer">
       {% section 'announcement' %}
       {% section 'header' %}
+      {% section 'text-adverts' %}
 
       <main id="main" role="main">
         {{ content_for_layout }}
