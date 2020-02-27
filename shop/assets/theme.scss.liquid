@@ -1833,7 +1833,7 @@ body {
     }
 
     .u-h3 {
-      font-size: 25px;
+      font-size: 20px;
     }
 
     .u-h4 {
@@ -7693,9 +7693,9 @@ $vertical-spacing-two-products-per-row  : 0px;
 }
 
 .Footer__PaymentList {
-  margin: 54px -24px 0 -24px;
-  padding-top: 28px;
-  border-top: 1px solid $footer-border-color;
+  // margin: 54px -24px 0 -24px;
+  // padding-top: 28px;
+  // border-top: 1px solid $footer-border-color;
 }
 
 .Footer__PaymentList svg {
@@ -11642,6 +11642,10 @@ https://flickity.metafizzy.co
 	z-index: 3;
 }
 
+.full-width{
+  width: 100%;
+}
+
 @include av-mq('phone') {
   .desktop-only{
     display: none;
@@ -11729,6 +11733,7 @@ https://flickity.metafizzy.co
 .CollectionList__Header{
    margin-top: 70px;
 }
+
 
 /*------  Image with image --------*/
 .FeatureText__ImageWrapper-2{
@@ -11843,6 +11848,7 @@ https://flickity.metafizzy.co
     padding: 3px 0;
     background-color: white;
     color: black;
+    border: none;
   }
 }
 .FooterPayment__title{
@@ -11939,6 +11945,10 @@ https://flickity.metafizzy.co
     }
 }
 
+.SearchIcon{
+  z-index: 3;
+}
+
 @include av-mq('phone') {
   .Header{
     .Header__Icon{
@@ -11951,4 +11961,90 @@ https://flickity.metafizzy.co
        margin-left: 8px;
      }
   }
+}
+
+/// Collection  Slideshow //
+
+.featured-products{
+    a{
+       text-decoration: none;
+    }
+    .flickity-page-dots {
+      bottom: -35px;
+    }
+    .flickity-button {
+      background: red;
+    }
+}
+
+.product-thumbnail__image{
+   max-width: 500px;
+   margin: auto;
+   margin-bottom: 20px;
+}
+
+.product-thumbnail__content{
+  text-align: left;
+}
+
+.product-thumbnail__title{
+  margin:0;
+}
+
+.product-thumbnail__price {
+  margin-bottom: 10px;
+}
+
+.collection__thumbnails {
+  width: 33%; /* carousel width */
+  margin-right: 40px;
+}
+
+.sold-out-badge{
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border: 1px solid #333e47;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.sold-out-opacity{
+  opacity: .5;
+}
+
+.compared__price{
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+
+@include av-mq('phone') {
+    .collection__thumbnails {
+      width: 100%; /* full width */
+      margin-right: 10px;
+      text-align: center;
+    }
+
+    .product-thumbnail__image{
+       max-width: 225px;
+       margin-bottom: 20px;
+    }
+
+    .product-thumbnail__price {
+      margin: 5px 0 20px 0;
+    }
+
+    .featured-products{
+      .flickity-page-dots {
+        bottom: -35px;
+      }
+    }
+    .sold-out-badge{
+      top: 50px;
+    }
 }

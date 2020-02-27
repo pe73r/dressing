@@ -123,16 +123,18 @@ HEADER CONTENT
         data-section-settings='{{ section_settings }}'
         role="banner">
   <div class="Header__Wrapper">
+
     <div class="Header__FlexItem Header__FlexItem--fill">
       <button class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless use_sidebar_menu %}hidden-desk{% endunless %}" aria-expanded="false" data-action="open-drawer" data-drawer-id="sidebar-menu" aria-label="{{ 'header.navigation.open_sidebar' | t }}">
         <span class="hidden-tablet-and-up">{%- render 'icon' with 'nav' -%}</span>
         <span class="hidden-phone">{%- render 'icon' with 'nav-desktop' -%}</span>
       </button>
 
-      <a href="{{ routes.search_url }}" class="desktop-only Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}">
+      <a href="{{ routes.search_url }}" class="desktop-only SearchIcon Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}">
         <span class="hidden-tablet-and-up">{%- include 'icon-search' -%}</span>
         <span class="hidden-phone">{%- include 'icon-search' -%}</span>
       </a>
+
 
       {%- comment -%}
       --------------------------------------------------------------------------------------------------------------------
@@ -156,7 +158,7 @@ HEADER CONTENT
         {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
 
         <nav class="Header__MainNav hidden-pocket hidden-lap {% unless section.settings.show_icons %} MenuInlinePosition {% endunless %}" aria-label="{{ 'header.navigation.title' | t }}">
-          <ul class="HorizontalList HorizontalList--spacingExtraLoose"> 
+          <ul class="HorizontalList HorizontalList--spacingExtraLoose">
             {%- for link in main_menu.links -%}
               {%- assign downcased_link_title = link.title | downcase | strip -%}
               {%- assign use_mega_menu = false -%}
@@ -355,6 +357,7 @@ HEADER CONTENT
       {%- endif -%}
     </div>
 
+
     <div class="Header__FlexItem Header__FlexItem--fill">
       {%- unless section.settings.show_icons or use_sidebar_menu -%}
         <nav class="Header__SecondaryNav hidden-phone">
@@ -392,9 +395,9 @@ HEADER CONTENT
         </nav>
       {%- endunless -%}
 
-
-
-      <a href="{{ section.settings.heart-link }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}">
+      
+      <!-- <a href="{{ section.settings.heart-link }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}"> -->
+        <a href="#" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="" aria-label="{{ 'header.navigation.search' | t }}">
         <span class="hidden-tablet-and-up">{%- include 'icon-heart' -%}</span>
         <span class="hidden-phone">{%- include 'icon-heart' -%}</span>
       </a>
