@@ -129,11 +129,6 @@ HEADER CONTENT
         <span class="hidden-phone">{%- render 'icon' with 'nav-desktop' -%}</span>
       </button>
 
-      <a href="{{ routes.search_url }}" class="desktop-only Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}">
-        <span class="hidden-tablet-and-up">{%- include 'icon-search' -%}</span>
-        <span class="hidden-phone">{%- include 'icon-search' -%}</span>
-      </a>
-
       {%- comment -%}
       --------------------------------------------------------------------------------------------------------------------
       DESKTOP NAVIGATION (if not using the sidebar mode)
@@ -155,8 +150,8 @@ HEADER CONTENT
 
         {%- assign mega_menu_names = mega_menu_names | downcase | split: ',' | compact -%}
 
-        <nav class="Header__MainNav hidden-pocket hidden-lap {% unless section.settings.show_icons %} MenuInlinePosition {% endunless %}" aria-label="{{ 'header.navigation.title' | t }}">
-          <ul class="HorizontalList HorizontalList--spacingExtraLoose"> 
+        <nav class="Header__MainNav hidden-pocket hidden-lap" aria-label="{{ 'header.navigation.title' | t }}">
+          <ul class="HorizontalList HorizontalList--spacingExtraLoose">
             {%- for link in main_menu.links -%}
               {%- assign downcased_link_title = link.title | downcase | strip -%}
               {%- assign use_mega_menu = false -%}
@@ -304,7 +299,7 @@ HEADER CONTENT
                 {%- endif -%}
               {%- endcapture -%}
 
-              <li class="HeaderLink HorizontalList__Item {% if link.links == blank and link.active %}is-active{% endif %}" {% if menu_item_dropdown != blank %}aria-haspopup="true"{% endif %}>
+              <li class="HorizontalList__Item {% if link.links == blank and link.active %}is-active{% endif %}" {% if menu_item_dropdown != blank %}aria-haspopup="true"{% endif %}>
                 <a href="{{ link.url }}" class="Heading u-h6">
                   {{- link.title | escape -}}
 
@@ -365,21 +360,27 @@ HEADER CONTENT
               </li>
             {%- endif -%}
 
+
+
+            <li class="HorizontalList__Item">
+              <a href="{{ section.settings.wishlist-link }}" class="Heading Link Link--primary Text--subdued u-h8" data-action="">
+                {% include 'icon-heart' %}
+              </a>
+            </li>
+
+            <li class="HorizontalList__Item relative">
+              <a href="{{ routes.cart_url }}" class="Heading u-h6 relative" {% unless template == 'cart' or settings.cart_type == 'page' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endunless %}>
+                {% include 'icon-shopping' %}<span class="Header__CartCount">{{ cart.item_count }}</span>
+              </a>
+            </li>
+
             {%- if shop.customer_accounts_enabled -%}
               <li class="HorizontalList__Item">
                 <a href="{{ routes.account_url }}" class="Heading Link Link--primary Text--subdued u-h8">
-                  {{- 'header.navigation.account' | t -}}
+                  {% include 'icon-user' %}
                 </a>
               </li>
             {%- endif -%}
-
-            <li class="HorizontalList__Item">
-              <a href="{{ routes.search_url }}" class="Heading Link Link--primary Text--subdued u-h8" data-action="toggle-search">{{ 'header.navigation.search' | t }}</a>
-            </li>
-
-            <li class="HorizontalList__Item">
-              <a href="{{ routes.cart_url }}" class="Heading u-h6" {% unless template == 'cart' or settings.cart_type == 'page' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endunless %}>{{ 'header.navigation.cart' | t }} (<span class="Header__CartCount">{{ cart.item_count }}</span>)</a>
-            </li>
           </ul>
         </nav>
       {%- elsif currency_conversion_select != blank -%}
@@ -392,30 +393,26 @@ HEADER CONTENT
         </nav>
       {%- endunless -%}
 
-
-
-      <a href="{{ section.settings.heart-link }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}">
-        <span class="hidden-tablet-and-up">{%- include 'icon-heart' -%}</span>
-        <span class="hidden-phone">{%- include 'icon-heart' -%}</span>
-      </a>
-
-      <a href="{{ routes.cart_url }}" class="relative Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" {% if settings.cart_type == 'drawer' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endif %}>
-        <span class="hidden-tablet-and-up">{%- include 'icon-shopping' -%}</span>
-        <span class="hidden-phone">{%- include 'icon-shopping' -%}</span>
-        <!-- <span class="Header__CartDot "></span> -->
-        {% if section.settings.display-cart-quantity %}
-          <span class="Header__CartCount">{{ cart.item_count }}</span>
-        {% endif %}
-      </a>
-
       {%- if shop.customer_accounts_enabled and section.settings.show_icons or use_sidebar_menu -%}
         <a href="{{ routes.account_url }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable hidden-phone">
-          {%- include 'icon-user' -%}
+          {%- render 'icon-user' -%}
         </a>
       {%- endif -%}
 
+      <a href="{{ routes.search_url }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}">
+        <span class="hidden-tablet-and-up">{%- render 'icon-search' -%}</span>
+        <span class="hidden-phone">{%- render 'icon' with 'search-desktop' -%}</span>
+      </a>
+
+      <a href="{{ routes.cart_url }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" {% if settings.cart_type == 'drawer' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endif %}>
+        <span class="hidden-tablet-and-up">{%- render 'icon-shopping' -%}</span>
+        <span class="hidden-phone">{%- render 'icon-shopping' -%}</span>
+        <span class="Header__CartDot {% if cart.item_count > 0 %}is-visible{% endif %}"></span>
+      </a>
     </div>
   </div>
+
+
 </header>
 
 <style>
@@ -537,23 +534,25 @@ HEADER CONTENT
           "label": "Sidebar"
         },
         {
+          "value": "inline",
+          "label": "Inline"
+        },
+        {
           "value": "center",
           "label": "Center"
+        },
+        {
+          "value": "logoLeft",
+          "label": "Logo left"
         }
       ],
-      "default": "center"
+      "default": "inline"
     },
     {
       "type": "checkbox",
       "id": "show_icons",
       "label": "Show icons",
       "info": "Text for account, search and cart are replaced by icons on desktop.",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "display-cart-quantity",
-      "label": "Display cart quantity",
       "default": false
     },
     {

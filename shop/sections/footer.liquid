@@ -56,11 +56,11 @@
 
                     {% comment %} shopify logos by default {% endcomment %}
                     {%- if payment_methods != blank -%}
-                      <ul class="Footer__PaymentList HorizontalList">
-                        <!-- {{ payment_methods }} -->
-                      </ul>
+                      <!-- <ul class="Footer__PaymentList HorizontalList">
+                         {{ payment_methods }}
+                      </ul> --> 
                     {%- endif -%}
-                    
+
                     {% comment %} pictos in schema {% endcomment %}
                     <ul class="Footer__PaymentList HorizontalList">
                       {% if block.settings.picto-1  != blank %}

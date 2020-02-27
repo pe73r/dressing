@@ -1726,15 +1726,15 @@ body {
   }
 } @else {
   .u-h1 {
-    font-size: 40px;
-  }
-
-  .u-h2 {
     font-size: 30px;
   }
 
-  .u-h3 {
+  .u-h2 {
     font-size: 25px;
+  }
+
+  .u-h3 {
+    font-size: 20px;
   }
 
   .u-h4 {
@@ -3333,7 +3333,7 @@ select::-ms-expand {
   }
 
   .HorizontalList--spacingExtraLoose .HorizontalList__Item {
-    margin-right: 21px;
+    margin-right: 30px;
     margin-left: 21px;
   }
 }
@@ -4738,6 +4738,7 @@ select::-ms-expand {
   .PageHeader .SectionHeader__Heading {
     margin-bottom: 10px;
   }
+
 }
 
 @include av-mq('tablet-and-up') {
@@ -5409,6 +5410,8 @@ select::-ms-expand {
 .SectionHeader__Heading.SectionHeader__Heading,
 .SectionHeader__SubHeading.SectionHeader__SubHeading {
   margin-top: -0.325em;
+  margin-bottom: 20px;
+  line-height: 1.3em;
 }
 
 .SectionHeader__SubHeading + .SectionHeader__Heading,
@@ -5450,6 +5453,9 @@ select::-ms-expand {
 @include av-mq('tablet-and-up') {
   .SectionHeader__Heading--emphasize {
     font-size: to-size(50px);
+    margin-bottom: 0;
+  }
+  .SectionHeader__Heading.SectionHeader__Heading{
     margin-bottom: 0;
   }
 }
@@ -8032,7 +8038,7 @@ $vertical-spacing-two-products-per-row  : 0px;
   }
 
   .Header:not(.Header--sidebar) .Header__Wrapper {
-    padding: 18px 50px;
+    padding: 30px 50px;
   }
 
   .Header__CurrencySelector {
@@ -8067,8 +8073,8 @@ $vertical-spacing-two-products-per-row  : 0px;
 
     .Header__MainNav {
       position: absolute;
-      bottom: 0;
-      left: 0;
+      bottom: 14px; /* Change position menu centered */
+      left: -16px; /* Change psoition menu centered */
       padding-bottom: 18px;
       width: 100%;
       text-align: center;
@@ -8081,7 +8087,7 @@ $vertical-spacing-two-products-per-row  : 0px;
     }
 
     .Header__FlexItem {
-      margin-bottom: 40px;
+      // margin-bottom: 40px;
     }
 
     .Header__FlexItem:last-child .Header__CurrencySelector {
@@ -8114,7 +8120,7 @@ $vertical-spacing-two-products-per-row  : 0px;
   &::after {
     position: absolute;
     content: '';
-    bottom: 0;
+    bottom: 15px;
     left: 0;
     width: 100%;
     opacity: 0;
@@ -11666,7 +11672,7 @@ https://flickity.metafizzy.co
 
 @include av-mq('phone') {
   .container-medium{
-    width: 100%; 
+    width: 100%;
   }
 }
 
@@ -11863,5 +11869,86 @@ https://flickity.metafizzy.co
 @include av-mq('phone') {
   .Footer__PaymentList{
      margin: 0;
+  }
+}
+
+
+/*------  Header --------*/
+
+.Header{
+  .HorizontalList__Item{
+    svg{
+      width: 40px;
+      height: 40px;
+    }
+    .Header__CartCount{
+      background-color: red;
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      color: white;
+      font-size: 12px;
+      position: absolute;
+      top: -25px;
+      text-align: center;
+      right: -6px;
+    }
+  }
+
+  .Header__Icon{
+    svg{
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .Header__CartDot{
+    background-color: red;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: -25px;
+    text-align: center;
+    right: -6px;
+  }
+
+  .Header__CartCount{
+      background-color: red;
+      width: 17px;
+      height: 17px;
+      padding: 2px;
+      border-radius: 50%;
+      color: white;
+      position: absolute;
+      top: 0px;
+      text-align: center;
+      right: -6px;
+      font-weight: bold;
+   }
+
+  // margin to centered menu//
+     .HeaderLink:nth-child(2) {
+        margin-right: 300px;
+      }
+
+    .MenuInlinePosition{
+        bottom: 6px !important;
+    }
+}
+
+@include av-mq('phone') {
+  .Header{
+    .Header__Icon{
+      svg{
+        width: 30px;
+        height: 30px;
+        }
+     }
+   .Header__Icon + .Header__Icon {
+       margin-left: 8px;
+     }
   }
 }
