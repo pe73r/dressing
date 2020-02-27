@@ -11654,6 +11654,7 @@ https://flickity.metafizzy.co
 
 .container-medium{
   max-width: 1300px;
+  width: 90%;
   margin: auto;
 }
 
@@ -11661,6 +11662,15 @@ https://flickity.metafizzy.co
   max-width: 1100px;
   margin: auto;
 }
+
+
+@include av-mq('phone') {
+  .container-medium{
+    width: 100%; 
+  }
+}
+
+
 
 /*------  Text adverts --------*/
 
@@ -11712,6 +11722,13 @@ https://flickity.metafizzy.co
 /*------  Collection list --------*/
 .CollectionList__Header{
    margin-top: 70px;
+}
+
+/*------  Image with image --------*/
+.FeatureText__ImageWrapper-2{
+  display: table-cell;
+  vertical-align: middle;
+  width: 30%;
 }
 
 /*------  Picto advantages --------*/
