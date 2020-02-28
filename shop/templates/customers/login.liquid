@@ -1,6 +1,6 @@
 <section data-section-id="login" data-section-type="login">
   <div class="Container">
-    <div class="PageContent PageContent--fitScreen PageContent--extraNarrow">
+    <div class="PageContent PageContent--fitScreen PageContent--extraNarrow PageLogin">
       {%- assign is_recover_active = false -%}
 
       {%- form 'recover_customer_password' -%}
@@ -22,9 +22,11 @@
       {%- endif -%}
 
       {%- form 'customer_login', name: 'login', class: 'Form Form--spacingTight', id: 'customer_login', style: login_default_visibility -%}
-        <header class="Form__Header">
-          <h1 class="Form__Title Heading u-h1">{{ 'customer.login.title' | t }}</h1>
-          <p class="Form__Legend">{{ 'customer.login.description' | t }}</p>
+        <header class="Form__Header LoginHeader">
+          <h1 class="Form__Title Heading u-h3 LoginTitle">{{ 'customer.login.title' | t }}</h1>
+          <a href="{{ routes.account_register_url }}" class="Link Link--secondary LoginLink u-h3">{{ 'customer.register.title' | t }}</a>
+
+          <!-- <p class="Form__Legend">{{ 'customer.login.description' | t }}</p> -->
         </header>
 
         {%- if form.errors -%}
@@ -41,15 +43,16 @@
         <div class="Form__Item">
           <input type="password" class="Form__Input" name="customer[password]" required="required" placeholder="{{ 'customer.login.password' | t }}" aria-label="{{ 'customer.login.password' | t }}">
           <label class="Form__FloatingLabel">{{ 'customer.login.password' | t }}</label>
-          <button type="button" class="Form__ItemHelp Link Link--primary" data-action="toggle-recover-form">{{ 'customer.login.forgot' | t }}</button>
         </div>
 
         <button type="submit" class="Form__Submit Button Button--primary Button--full">{{ 'customer.login.submit' | t }}</button>
-
-        <div class="Form__Hint Form__Hint--center">
+        <div class="FormForgot">
+          <button type="button" class="Form__ItemHelp Link Link--primary" data-action="toggle-recover-form">{{ 'customer.login.forgot' | t }}</button>
+        </div>
+        <!-- <div class="Form__Hint Form__Hint--center">
           <span class="Text--subdued">{{ 'customer.login.register_label' | t }}</span>
           <a href="{{ routes.account_register_url }}" class="Link Link--secondary">{{ 'customer.login.register_link' | t }}</a>
-        </div>
+        </div> -->
       {%- endform -%}
 
       {%- comment -%}

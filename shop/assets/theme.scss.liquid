@@ -3157,12 +3157,13 @@ $drawer-header-height : 50px;
 }
 
 .Form__ItemHelp {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  font-size: to-size(12px);
-  color: $text-color-light;
-  transform: translateY(-50%);
+  position: relative;
+  // right: 12px;
+  // top: 50%;
+  // font-size: to-size(12px);
+  color: black;
+  text-decoration: underline;
+  // transform: translateY(-50%);
 }
 
 /**
@@ -5456,7 +5457,7 @@ select::-ms-expand {
     margin-bottom: 0;
   }
   .SectionHeader__Heading.SectionHeader__Heading{
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 }
 
@@ -12058,4 +12059,57 @@ https://flickity.metafizzy.co
   margin-bottom: 30px;
   border-bottom: 1px solid #000;
   padding-bottom: 20px;
+}
+
+// Contact //
+
+.PageContact{
+   .Form__Input,
+   .Form__Textarea{
+     border: 1px solid black;
+   }
+}
+
+
+// Login //
+
+.PageLogin{
+  .Form__Input{
+    background-color: #f7f7f7;
+    color: grey;
+  }
+}
+
+.LoginHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.LoginTitle{
+    margin: 0;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    padding: 10px 40px;
+}
+
+.LoginLink{
+  border-bottom: 1px solid black;
+  padding: 10px 40px;
+}
+
+.FormForgot{
+  margin-top: 20px;
+  text-align: center;
+}
+
+@include av-mq('phone') {
+  .LoginTitle{
+      padding: 10px 25px;
+  }
+
+  .LoginLink{
+    padding: 10px 25px;
+  }
 }

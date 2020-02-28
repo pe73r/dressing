@@ -395,7 +395,7 @@ HEADER CONTENT
         </nav>
       {%- endunless -%}
 
-      
+
       <!-- <a href="{{ section.settings.heart-link }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}"> -->
         <a href="#" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="" aria-label="{{ 'header.navigation.search' | t }}">
         <span class="hidden-tablet-and-up">{%- include 'icon-heart' -%}</span>
@@ -406,14 +406,14 @@ HEADER CONTENT
         <span class="hidden-tablet-and-up">{%- include 'icon-shopping' -%}</span>
         <span class="hidden-phone">{%- include 'icon-shopping' -%}</span>
         <!-- <span class="Header__CartDot "></span> -->
-        {% if section.settings.display-cart-quantity %}
+        {% if cart.item_count > 0 %}
           <span class="Header__CartCount">{{ cart.item_count }}</span>
         {% endif %}
       </a>
 
       {%- if shop.customer_accounts_enabled and section.settings.show_icons or use_sidebar_menu -%}
         <a href="{{ routes.account_url }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable hidden-phone">
-          {%- include 'icon-user' -%}
+          {%- include 'icon-user' -%} 
         </a>
       {%- endif -%}
 
@@ -551,12 +551,6 @@ HEADER CONTENT
       "id": "show_icons",
       "label": "Show icons",
       "info": "Text for account, search and cart are replaced by icons on desktop.",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "display-cart-quantity",
-      "label": "Display cart quantity",
       "default": false
     },
     {
