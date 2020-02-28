@@ -2327,7 +2327,7 @@ body {
 
 @media (-moz-touch-enabled: 0), (hover: hover) {
   .RoundButton:hover {
-    transform: scale(1.1);
+    // transform: scale(1.1);
   }
 
   .RoundButton--small:hover {
@@ -8755,12 +8755,13 @@ $vertical-spacing-two-products-per-row  : 0px;
 }
 
 .NewsletterPopup__Form {
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 @include av-mq('tablet-and-up') {
   .NewsletterPopup {
-    max-width: 385px;
+    width: fit-content;
+    max-width: 600px;
     right: 25px;
     bottom: 25px;
     left: auto;
@@ -11661,6 +11662,7 @@ https://flickity.metafizzy.co
 
 .container-large{
   max-width: 1400px;
+  width: 95%;
   margin: auto;
 }
 
@@ -11677,7 +11679,9 @@ https://flickity.metafizzy.co
 
 
 @include av-mq('phone') {
-  .container-medium{
+
+  .container-medium,
+  .container-large{
     width: 100%;
   }
 }
@@ -12112,4 +12116,30 @@ https://flickity.metafizzy.co
   .LoginLink{
     padding: 10px 25px;
   }
+}
+
+// Pop up //
+
+
+.NewsletterPopup__Heading{
+  margin: 0;
+}
+
+.PopUp__flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PopuP__Image{
+  max-width: 300px;
+}
+
+.PopuP__Newsletter{
+  max-width: 300px;
+  text-align: left;
+}
+
+.PopUp__submit{
+   margin-top: 10px;
 }

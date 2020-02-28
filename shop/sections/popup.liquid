@@ -10,29 +10,37 @@
 
       <aside class="NewsletterPopup" data-section-id="{{ section.id }}" data-section-type="newsletter-popup" data-section-settings='{{ section_settings }}' aria-hidden="true">
         <button class="NewsletterPopup__Close" data-action="close-popup" aria-label="{{ 'general.popup.close' | t }}">{% render 'icon' with 'close' %}</button>
+       <div class="PopUp__flex">
+           <div class="PopuP__Image">
+              {% if section.settings.image != blank %}
+                <img src="{{ section.settings.image | img_url:'master'}}" alt="">
+              {% endif %}
+           </div>
+           <div class="PopuP__Newsletter">
+              {%- if section.settings.title != blank -%}
+                <h2 class="NewsletterPopup__Heading Heading u-h2">{{ section.settings.title | escape }}</h2>
+              {%- endif -%}
 
-        {%- if section.settings.title != blank -%}
-          <h2 class="NewsletterPopup__Heading Heading u-h2">{{ section.settings.title | escape }}</h2>
-        {%- endif -%}
+              {%- if section.settings.content != blank -%}
+                <div class="NewsletterPopup__Content u-h4">
+                  {{ section.settings.content }}
+                </div>
+              {%- endif -%}
 
-        {%- if section.settings.content != blank -%}
-          <div class="NewsletterPopup__Content">
-            {{ section.settings.content }}
-          </div>
-        {%- endif -%}
+              {%- if section.settings.show_newsletter -%}
+                {%- form 'customer', id: 'newsletter-popup', class: 'NewsletterPopup__Form' -%}
+                  {%- if form.posted_successfully? -%}
+                    <p class="Form__Alert Alert Alert--success">{{ 'general.popup.success' | t }}</p>
+                  {%- else -%}
+                    <input type="hidden" name="contact[tags]" value="newsletter">
 
-        {%- if section.settings.show_newsletter -%}
-          {%- form 'customer', id: 'newsletter-popup', class: 'NewsletterPopup__Form' -%}
-            {%- if form.posted_successfully? -%}
-              <p class="Form__Alert Alert Alert--success">{{ 'general.popup.success' | t }}</p>
-            {%- else -%}
-              <input type="hidden" name="contact[tags]" value="newsletter">
-
-              <input type="email" name="contact[email]" class="Form__Input" required="required" aria-label="{{ 'general.popup.email_placeholder' | t }}" placeholder="{{ 'general.popup.email_placeholder' | t }}">
-              <button class="Form__Submit Button Button--primary Button--full" type="submit">{{ 'general.popup.submit' | t }}</button>
-            {%- endif -%}
-          {%- endform -%}
-        {%- endif -%}
+                    <input type="email" name="contact[email]" class="Form__Input" required="required" aria-label="{{ 'general.popup.email_placeholder' | t }}" placeholder="{{ 'general.popup.email_placeholder' | t }}">
+                    <button class="Form__Submit Button Button--primary Button--full PopUp__submit" type="submit">{{ 'general.popup.submit' | t }}</button>
+                  {%- endif -%}
+                {%- endform -%}
+              {%- endif -%}
+            </div>
+         </div>
       </aside>
     {%- endunless -%}
   {%- endunless -%}
@@ -66,6 +74,11 @@
       "id": "show_only_once",
       "label": "Show only once per customer",
       "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
     },
     {
       "type": "text",
