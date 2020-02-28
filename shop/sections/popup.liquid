@@ -39,6 +39,9 @@
                   {%- endif -%}
                 {%- endform -%}
               {%- endif -%}
+              {% if section.settings.button != blank %}
+                 <a class="Button Button--primary PopUp__Button" href="{{ section.settings.url }}">{{ section.settings.button }}</a>
+              {% endif %}
             </div>
          </div>
       </aside>
@@ -97,6 +100,17 @@
       "id": "show_newsletter",
       "label": "Show newsletter form",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Button text",
+      "info": "Displays a button when isn't empty"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Button link"
     },
     {
       "type": "range",

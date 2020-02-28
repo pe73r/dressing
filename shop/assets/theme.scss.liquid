@@ -1886,8 +1886,8 @@ body {
   line-height: normal;
   border: 1px solid transparent;
   border-radius: 0;
-  text-transform: uppercase;
-  font-size: to-size(12px);
+  text-transform: inherit;
+  font-size: to-size(14px);
   text-align: center;
   letter-spacing: 0.2em;
   font-family: $heading-font-family;
@@ -6804,13 +6804,13 @@ select::-ms-expand {
  */
 
 .CollectionToolbar {
-  position: -webkit-sticky;
-  position: sticky;
+  // position: -webkit-sticky;
+  // position: sticky;
   display: flex;
   justify-content: space-between;
   width: 100%;
   background: $background;
-  box-shadow: 1px 1px $border-color, -1px -1px $border-color;
+  // box-shadow: 1px 1px $border-color, -1px -1px $border-color;
   z-index: 2;
 }
 
@@ -6825,6 +6825,7 @@ select::-ms-expand {
 .supports-sticky .CollectionToolbar--bottom {
   bottom: 0; /* as of today the best polyfill I've found does not support polyfilling sticky on bottom. As a consequence on those old
                 browsers, the stickiness is always at the top */
+  margin-bottom: 40px;
 }
 
 .CollectionToolbar__Group {
@@ -6835,11 +6836,15 @@ select::-ms-expand {
 .CollectionToolbar__Item {
   flex: 1 0 auto;
   padding: 13px 0;
-  border-left: 1px solid $border-color;
+  // border-left: 1px solid $border-color;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
   transition: background 0.2s ease-in-out;
+  border: 1px solid #000;
+  margin-top: 30px;
+  margin-left: 20px;
+  color: #000;
 }
 
 .CollectionToolbar__Item--sort .Icon--select-arrow {
@@ -6872,7 +6877,7 @@ select::-ms-expand {
 
 @include av-mq('phone') {
   .CollectionToolbar__Item:first-child {
-    border-left: none;
+    // border-left: none;
   }
 }
 
@@ -6975,6 +6980,7 @@ select::-ms-expand {
 
 .ProductItem__Info {
   margin-top: 20px;
+  text-align: left;
 
   @if $uppercase-heading {
     font-size: to-size(11px);
@@ -9258,7 +9264,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 
     .Product__SlideshowNavImage {
       display: inline-block;
-      width: 70px;
+      width: 110px;
       margin: 10px;
       vertical-align: middle;
     }
@@ -9277,7 +9283,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 .Product__Info,
 .Product__Aside {
-  max-width: 500px;
+  max-width: 300px;
   margin: 0 auto;
 }
 
@@ -9312,7 +9318,7 @@ $vertical-spacing-two-products-per-row  : 0px;
     right: 0;
     width: 375px;
     margin: 0 100px -40px 50px;
-    padding-top: 65px;
+    padding-top: 50px;
     padding-bottom: 40px;
 
     @supports (--css: variables) {
@@ -9548,10 +9554,11 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 .ProductMeta__Title {
   margin-bottom: 0;
+  text-align: center;
 }
 
 .ProductMeta__PriceList {
-  margin-top: 15px;
+  margin-top: 0;
 }
 
 .ProductMeta__Price.Price--compareAt {
@@ -9560,9 +9567,9 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 .ProductMeta__Description {
   margin: 24px 0;
-  padding-top: 24px;
-  border-top: 1px solid $border-color;
-  text-align: left;
+  // padding-top: 24px;
+  // border-top: 1px solid $border-color;
+  text-align: center;
 }
 
 .ProductMeta__ShareButtons {
@@ -11978,9 +11985,31 @@ https://flickity.metafizzy.co
     .flickity-page-dots {
       bottom: -35px;
     }
+
     .flickity-button {
       background: red;
     }
+
+    .flickity-prev-next-button{
+      border-radius: 0;
+      background-color: black;
+      color: white;
+        &:hover{
+          color:#fff;
+        }
+    }
+
+    .flickity-prev-next-button.next {
+    right: -20px;
+    }
+    .flickity-prev-next-button.previous {
+    left: -20px;
+   }
+
+   .flickity-prev-next-button {
+    width: 50px;
+    height: 30px;
+   }
 }
 
 .product-thumbnail__image{
@@ -12120,7 +12149,6 @@ https://flickity.metafizzy.co
 
 // Pop up //
 
-
 .NewsletterPopup__Heading{
   margin: 0;
 }
@@ -12142,4 +12170,87 @@ https://flickity.metafizzy.co
 
 .PopUp__submit{
    margin-top: 10px;
+}
+
+.PopUp__Button{
+  margin-top: 10px;
+  width: 100%;
+}
+
+/////////////////
+// Collection  //
+////////////////
+
+.CollectionHeader{
+  margin-bottom: 0;
+}
+
+.ToolbarContainer{
+  width: 95%;
+  margin: auto;
+  margin-top: 30px;
+}
+.CollectionSwitch{
+  border: none;
+}
+.CollectionItem__Button{
+  width: 100%;
+  margin-top: 20px;
+}
+
+@include av-mq('phone') {
+
+  .ToolbarContainer{
+    margin-top: 0;
+  }
+
+  .CollectionToolbar__Group{
+    flex-direction: column;
+  }
+
+  .CollectionToolbar__Item{
+    margin-top: 10px;
+    margin-left:0;
+  }
+}
+
+//////////////////////
+/// Product Page ////
+////////////////////
+
+.Product{
+    .flickity-prev-next-button{
+      border-radius: 0;
+      background-color: black;
+      color: white;
+        &:hover{
+          color:#fff;
+        }
+    }
+
+    .flickity-prev-next-button.next {
+    right: -20px;
+    }
+    .flickity-prev-next-button.previous {
+    left: -20px;
+    }
+    .flickity-prev-next-button {
+     width: 50px;
+     height: 30px;
+    }
+
+}
+
+@include av-mq('phone') {
+  .Product{
+      .flickity-prev-next-button,
+      .flickity-page-dots {
+       display: none;
+      }
+  } 
+
+  .Product__Info,
+  .Product__Aside {
+    max-width: 350px;
+  }
 }

@@ -6,7 +6,7 @@
         <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title }}</h2>
       </div>
     {% endif %}
-   <div class="main-carousel carousel" data-flickity='{ "cellAlign": "left", "groupCells": true, "contain": true, "pageDots": {{ section.settings.display-dots }},  "prevNextButtons": {{ section.settings.display-arrows }}, "arrowShape": {"x0": 10,"x1": 55, "y1": 45,"x2": 60, "y2": 40,"x3": 20} }'>
+   <div class="main-carousel carousel" data-flickity='{ "cellAlign": "left", "wrapAround": true, "groupCells": true, "contain": true, "pageDots": {{ section.settings.display-dots }},  "prevNextButtons": {{ section.settings.display-arrows }}, "arrowShape": {"x0": 10,"x1": 55, "y1": 45,"x2": 60, "y2": 40,"x3": 20} }'>
      {% for product in collection.products limit: 8 %}
        {% render 'product-thumbnail', product: product %}
      {% endfor %}

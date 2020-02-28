@@ -1,6 +1,7 @@
 {%- capture flickity_config -%}
 {
   "wrapAround": true,
+  "groupCells": true,
   "pageDots": false,
   "setGallerySize": false,
   "prevNextButtons": false,
@@ -9,7 +10,7 @@
 {%- endcapture -%}
 
 <section class="Section Section--spacingNormal" data-section-id="{{ section.id }}" data-section-type="instagram">
-  <div class="container-large">
+  <div class="">
   {%- if section.settings.subheading != blank or section.settings.title != blank -%}
     <section class="SectionHeader SectionHeader--center">
       <div class="Container">

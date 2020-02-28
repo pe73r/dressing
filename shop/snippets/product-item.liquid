@@ -82,9 +82,6 @@
           <p class="ProductItem__Vendor Heading">{{ product.vendor }}</p>
         {%- endif -%}
 
-        <h2 class="ProductItem__Title Heading">
-          <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-        </h2>
 
         {%- if show_color_swatch -%}
           {%- assign color_swatch_list = '' -%}
@@ -145,19 +142,27 @@
         {%- endif -%}
 
         {%- if product.template_suffix != 'coming-soon' -%}
-          <div class="ProductItem__PriceList {% if show_price_on_hover %}ProductItem__PriceList--showOnHover{% endif %} Heading">
+          <div class="ProductItem__PriceList ">
             {%- if product.compare_at_price > product.price -%}
-              <span class="ProductItem__Price Price Price--highlight Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
-              <span class="ProductItem__Price Price Price--compareAt Text--subdued" data-money-convertible>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+              <span class="ProductItem__Price Price Price--highlight u-h3" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
+              <span class="ProductItem__Price Price Price--compareAt Text--subdued u-h3" data-money-convertible>{{ product.compare_at_price | money_without_trailing_zeros }}</span>
             {%- elsif product.price_varies -%}
               {%- capture formatted_min_price -%}<span data-money-convertible>{{ product.price_min | money_without_trailing_zeros }}</span>{%- endcapture -%}
               {%- capture formatted_max_price -%}<span data-money-convertible>{{ product.price_max | money_without_trailing_zeros }}</span>{%- endcapture -%}
-              <span class="ProductItem__Price Price Text--subdued">{{ 'collection.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}</span>
+              <span class="ProductItem__Price Price u-h3">{{ 'collection.product.from_price_html' | t: min_price: formatted_min_price, max_price: formatted_max_price }}</span>
             {%- else -%}
-              <span class="ProductItem__Price Price Text--subdued" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
+              <span class="ProductItem__Price Price u-h3" data-money-convertible>{{ product.price | money_without_trailing_zeros }}</span>
             {%- endif -%}
           </div>
         {%- endif -%}
+
+        <h2 class="ProductItem__Title Heading u-h3">
+          <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+        </h2>
+
+        {% if section.settings.show-button %}
+           <a class="Button Button--primary CollectionItem__Button" href="{{ product.url | within: collection }}">{{ 'collection.product.view_product' | t }}</a>
+        {% endif %}
 
         {%- if show_price_on_hover == false and color_swatch_list != blank -%}
           {{- color_swatch_list -}}
@@ -167,6 +172,6 @@
   </div>
 
   {%- if use_horizontal -%}
-    <a href="{{ product.url }}" class="ProductItem__ViewButton Button Button--secondary hidden-pocket">{{ 'collection.product.view_product' | t }}</a>
+    <a href="{{ product.url }}" class="ProductItem__ViewButton Button Button--secondary hidden-pocket">{{ 'product.add_to_cart' | t }}</a>
   {%- endif -%}
 </div>
