@@ -11691,6 +11691,9 @@ https://flickity.metafizzy.co
   .container-large{
     width: 100%;
   }
+  .container-mobile{
+    width: 90%;
+  }
 }
 
 
@@ -12066,18 +12069,25 @@ https://flickity.metafizzy.co
     }
 
     .product-thumbnail__image{
-       max-width: 225px;
+       max-width: 350px;
        margin-bottom: 20px;
     }
 
     .product-thumbnail__price {
-      margin: 5px 0 20px 0;
+      margin: 5px 0 0 0;
     }
 
     .featured-products{
       .flickity-page-dots {
         bottom: -35px;
       }
+      .flickity-prev-next-button.next {
+      right: -10px;
+      }
+      .flickity-prev-next-button.previous {
+      left: -10px; 
+     }
+
     }
     .sold-out-badge{
       top: 50px;
@@ -12247,7 +12257,7 @@ https://flickity.metafizzy.co
       .flickity-page-dots {
        display: none;
       }
-  } 
+  }
 
   .Product__Info,
   .Product__Aside {
