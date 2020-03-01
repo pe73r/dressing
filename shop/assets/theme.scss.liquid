@@ -7690,6 +7690,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 .Footer__Aside {
   text-align: center;
+  margin-top: 30px;
 }
 
 .Footer__Inner + .Footer__Aside {
@@ -7746,6 +7747,7 @@ $vertical-spacing-two-products-per-row  : 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 0;
   }
 
   .Footer__Inner + .Footer__Aside {
@@ -12085,7 +12087,7 @@ https://flickity.metafizzy.co
       right: -10px;
       }
       .flickity-prev-next-button.previous {
-      left: -10px; 
+      left: -10px;
      }
 
     }
@@ -12263,4 +12265,39 @@ https://flickity.metafizzy.co
   .Product__Aside {
     max-width: 350px;
   }
+}
+
+/// Footer accordion ////
+
+.faq-accordion{
+
+  .content{
+    display:block;
+  }
+  i{
+     display: none;
+   }
+}
+
+@include av-mq('phone') {
+  .faq-accordion{
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    .content{
+      display:none;
+    }
+
+    i{
+       display: inline-block;
+       float: right;
+       margin-top: 2px;
+     }
+  }
+
+  .Footer__Block {
+    margin-top: 30px;
+  }
+
 }

@@ -16,37 +16,44 @@
           <div class="Footer__Block Footer__Block--{{ block.type }}" {{ block.shopify_attributes }}>
             {%- case block.type -%}
               {%- when 'text' -%}
+               <div class="faq-accordion">
                 {%- if block.settings.title != blank -%}
-                  <h2 class="Footer__Title Heading u-h4">{{ block.settings.title | escape }}</h2>
+                  <h2 class="Footer__Title Heading u-h4">{{ block.settings.title | escape }}<i class="mobile-only fa fa-plus"></i></h2>
                 {%- endif -%}
+                 <div class="content">
+                  {%- if block.settings.content != blank -%}
+                    <div class="Footer__Content Rte">
+                      {{ block.settings.content }}
+                    </div>
+                  {%- endif -%}
 
-                {%- if block.settings.content != blank -%}
-                  <div class="Footer__Content Rte">
-                    {{ block.settings.content }}
-                  </div>
-                {%- endif -%}
-
-                {%- if block.settings.show_social_media -%}
-                  {% render 'social-media', class: 'Footer__Social', spacing: 'loose' %}
-                {%- endif -%}
-
+                  {%- if block.settings.show_social_media -%}
+                    {% render 'social-media', class: 'Footer__Social', spacing: 'loose' %}
+                  {%- endif -%}
+                </div>
+              </div>
               {%- when 'links' -%}
                 {%- assign linklist = linklists[block.settings.menu] -%}
 
                 {%- if linklist != empty -%}
-                  <h2 class="Footer__Title Heading u-h4">{{ linklist.title | escape }}</h2>
-
-                  <ul class="Linklist">
-                    {%- for link in linklist.links -%}
-                      <li class="Linklist__Item">
-                        <a href="{{ link.url }}" class="Link Link--primary">{{ link.title | escape }}</a>
-                      </li>
-                    {%- endfor -%}
-                  </ul>
+                 <div class="faq-accordion">
+                    <h2 class="Footer__Title Heading u-h4">{{ linklist.title | escape }}<i class="mobile-only fa fa-plus"></i></h2>
+                    <div class="content">
+                      <ul class="Linklist">
+                        {%- for link in linklist.links -%}
+                          <li class="Linklist__Item">
+                            <a href="{{ link.url }}" class="Link Link--primary">{{ link.title | escape }}</a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                   </div>
+                  </div>
                 {%- endif -%}
                 {%- if section.settings.show_payment_methods and block.settings.payment -%}
                  <div class="FooterPayments">
-                    <h2 class="Footer__Title FooterPayment__title Heading u-h4">{{ block.settings.title | escape }}</h2>
+                   <div class="faq-accordion">
+                    <h2 class="Footer__Title FooterPayment__title Heading u-h4">{{ block.settings.title | escape }}<i class="mobile-only fa fa-plus"></i></h2>
+                    <div class="content">
                     {%- capture payment_methods -%}
                     {% assign enabled_payment_types = 'visa,master,american_express,paypal' | remove: ' ' | split: ',' %}
                      {% for type in enabled_payment_types %}
@@ -58,7 +65,7 @@
                     {%- if payment_methods != blank -%}
                       <!-- <ul class="Footer__PaymentList HorizontalList">
                          {{ payment_methods }}
-                      </ul> --> 
+                      </ul> -->
                     {%- endif -%}
 
                     {% comment %} pictos in schema {% endcomment %}
@@ -73,37 +80,42 @@
                        <img class="PaymentPicto" src="{{ block.settings.picto-3 | img_url:'master' }}" alt="">
                       {% endif %}
                     </ul>
+                    </div>
                   </div>
+                </div>
               {%- endif -%}
 
 
               {%- when 'newsletter' -%}
+               <div class="faq-accordion">
                 {%- if block.settings.title != blank -%}
-                  <h2 class="Footer__Title Heading u-h4">{{ block.settings.title | escape }}</h2>
+                  <h2 class="Footer__Title Heading u-h4">{{ block.settings.title | escape }}<i class="mobile-only fa fa-plus"></i></h2>
                 {%- endif -%}
-
-                {%- if block.settings.content != blank -%}
-                  <div class="Footer__Content Rte">
-                    {{ block.settings.content }}
-                  </div>
-                {%- endif -%}
-
-                {%- form 'customer', id: 'footer-newsletter', class: 'Footer__Newsletter Form' -%}
-                  {%- if form.posted_successfully? -%}
-                    <p class="Form__Alert Alert Alert--success">{{ 'footer.newsletter.success' | t }}</p>
-                  {%- else -%}
-                    {%- if form.errors -%}
-                      <p class="Form__Alert Alert Alert--error">{{ form.errors.messages['email'] }}</p>
-                    {%- endif -%}
-                   <div class="NewsletterFlex">
-                     <div class="NewsletterText">
-                       <input type="hidden" name="contact[tags]" value="newsletter">
-                       <input type="email" name="contact[email]" class="Form__Input" aria-label="{{ 'footer.newsletter.input' | t }}" placeholder="{{ 'footer.newsletter.input' | t }}" required>
-                     </div>
-                    <button type="submit" class="Form__Submit Button">&#8594;</button>
+                <div class="content">
+                  {%- if block.settings.content != blank -%}
+                    <div class="Footer__Content Rte">
+                      {{ block.settings.content }}
                     </div>
                   {%- endif -%}
-                {%- endform -%}
+
+                  {%- form 'customer', id: 'footer-newsletter', class: 'Footer__Newsletter Form' -%}
+                    {%- if form.posted_successfully? -%}
+                      <p class="Form__Alert Alert Alert--success">{{ 'footer.newsletter.success' | t }}</p>
+                    {%- else -%}
+                      {%- if form.errors -%}
+                        <p class="Form__Alert Alert Alert--error">{{ form.errors.messages['email'] }}</p>
+                      {%- endif -%}
+                     <div class="NewsletterFlex">
+                       <div class="NewsletterText">
+                         <input type="hidden" name="contact[tags]" value="newsletter">
+                         <input type="email" name="contact[email]" class="Form__Input" aria-label="{{ 'footer.newsletter.input' | t }}" placeholder="{{ 'footer.newsletter.input' | t }}" required>
+                       </div>
+                      <button type="submit" class="Form__Submit Button">&#8594;</button>
+                      </div>
+                    {%- endif -%}
+                  {%- endform -%}
+               </div>
+              </div>
             {%- endcase -%}
           </div>
         {%- endfor -%}

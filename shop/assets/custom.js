@@ -22,3 +22,35 @@
  *   bubbles: true
  * }));
  */
+
+/** Footer accordion **/
+
+ if (window.innerWidth < 640) {
+     $(document).ready(function() {
+        $(".faq-accordion > h2").on("click", function() {
+          if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+            $(this)
+              .siblings(".content")
+              .slideUp(200);
+            $(".faq-accordion > h2 i")
+              .removeClass("fa-minus")
+              .addClass("fa-plus");
+          } else {
+            $(".faq-accordion > h2 i")
+              .removeClass("fa-minus")
+              .addClass("fa-plus");
+            $(this)
+              .find("i")
+              .removeClass("fa-plus")
+              .addClass("fa-minus");
+            $(".faq-accordion > h2").removeClass("active");
+            $(this).addClass("active");
+            $(".content").slideUp(200);
+            $(this)
+              .siblings(".content")
+              .slideDown(200);
+          }
+        });
+      });
+  }
