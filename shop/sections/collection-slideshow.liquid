@@ -1,0 +1,94 @@
+{% if section.settings.display  %}
+  <section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="home-featured-products" class="Section Section--spacingNormal featured-products {% if section.settings.only-desktop %} desktop-only {% endif %}">
+    <div class="container-medium container-mobile">
+      {% if section.settings.title != blank %}
+        <div class="CollectionList__Header SectionHeader desktop-only align-center">
+          <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title }}</h2>
+        </div>
+      {% endif %}
+     <div class="main-carousel carousel" data-flickity='{ "cellAlign": "left", "wrapAround": true, "groupCells": true, "contain": true, "pageDots": {{ section.settings.display-dots }},  "prevNextButtons": {{ section.settings.display-arrows }}, "arrowShape": {"x0": 10,"x1": 55, "y1": 45,"x2": 60, "y2": 40,"x3": 20} }'>
+       {% for block in section.blocks %}
+       <div class="carousel-cell collection-cell relative">
+           <img class="full-width home-products__image" src="{{ block.settings.image | img_url:'master' }}" alt="">
+           <div class="CollectionSlideshowButton">
+             <a class="Button Button--primary" href="{{ block.settings.url}}">{{ block.settings.collection-name }}</a>
+           </div>
+       </div>
+      {% endfor %}
+     </div>
+   </div>
+  </section>
+{% endif %}
+{% schema %}
+{
+  "name": "Collection slideshow",
+  "settings": [
+          {
+            "type": "checkbox",
+            "id": "display",
+            "label": "Enable section",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "only-desktop",
+            "label": "Only desktop",
+            "default": false,
+            "info": "Section only in desktop"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Section title",
+            "default": "BIENVENUE DANS NOTRE DRESSING"
+          },
+          {
+             "type": "header",
+             "content": "Carrousel options"
+          },
+          {
+            "type": "checkbox",
+            "id": "display-arrows",
+            "label": "display arrows",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "display-dots",
+            "label": "display dots",
+            "default": true
+          }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "label"
+         },
+         {
+           "type": "text",
+           "id": "collection-name",
+           "label": "Collection name",
+           "default": "Collection"
+         },
+         {
+           "type": "url",
+           "id": "Link",
+           "label": "Link"
+         }
+
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":  "Collection Slideshow",
+      "category":  "Collection"
+    }
+  ]
+}
+{% endschema %}
