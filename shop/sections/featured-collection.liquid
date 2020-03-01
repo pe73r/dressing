@@ -11,6 +11,11 @@
        {% render 'product-thumbnail', product: product %}
      {% endfor %}
    </div>
+   {% if section.settings.button != blank %}
+     <div class="FeaturedCollectionButton">
+       <a class="Button Button--primary" href="{{ section.settings.url }}">{{ section.settings.button }}</a>
+     </div>
+   {% endif %}
  </div>
 </section>
 {% schema %}
@@ -43,6 +48,21 @@
             "id": "display-dots",
             "label": "display dots",
             "default": true
+          },
+          {
+            "type": "header",
+            "content": "button"
+          },
+          {
+            "type": "text",
+            "id": "button",
+            "label": "Button text",
+            "default": "Voir plus"
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "Button link"
           }
   ],
   "presets": [

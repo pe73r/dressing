@@ -273,6 +273,11 @@
               {%- endif -%}
             </div>
           {%- endif -%}
+          {% if section.settings.shipping-button != blank %}
+            <div class="ProductShippingButton">
+              <a class="Button ButtonShipping" href="{{ section.setting.shipping-url }}">{{ section.settings.shipping-button }}</a>
+            </div>
+          {% endif %}
           {% if section.settings.pop-up-text != blank %}
              <div class="ProductSizesButton">
                {% if section.settings.ruler != blank %}
@@ -596,6 +601,21 @@ This is the root container for the zoom functionality. Must not be removed, as o
       "type": "paragraph",
       "content": "The theme also allows you to add specific tabs for a given product only. [Learn more about this feature](http://support.maestrooo.com/article/83-product-adding-different-tabs-per-product)."
     },
+    {
+      "type": "header",
+      "content": "Shipping button"
+    },
+    {
+      "type": "text",
+      "id": "shipping-button",
+      "label": "Shipping button",
+      "default": "Livraison standard: 4,99€"
+    },
+    {
+      "type": "url",
+      "id": "shipping-url",
+      "label": "Shipping button link"
+    }, 
     {
       "type": "header",
       "content": "Pop up size guide"

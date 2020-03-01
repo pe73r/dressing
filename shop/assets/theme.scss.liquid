@@ -9285,7 +9285,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 
 .Product__Info,
 .Product__Aside {
-  max-width: 300px;
+  max-width: 350px;
   margin: 0 auto;
 }
 
@@ -9687,6 +9687,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 .ProductForm__Option {
   position: relative;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .ProductForm__Option--labelled {
@@ -12072,6 +12073,11 @@ https://flickity.metafizzy.co
   margin-left: 5px;
 }
 
+.FeaturedCollectionButton{
+  margin: 40px auto;
+  text-align: center;
+}
+
 
 @include av-mq('phone') {
     .collection__thumbnails {
@@ -12261,6 +12267,16 @@ https://flickity.metafizzy.co
      height: 30px;
     }
 }
+.ProductShippingButton{
+  margin: 40px auto;
+  text-align: center;
+}
+
+.ButtonShipping{
+  border: 1px solid black;
+  margin: auto;
+}
+
 
 /*==== product pop up ===*/
 .ProductSizesButton{
@@ -12279,7 +12295,7 @@ https://flickity.metafizzy.co
 }
 
 .ProductSizesPopup{
-  width: 90% !important;
+  width: fit-content !important;
   max-width: 1200px !important;
   margin-top: 80px;
   padding: 40px !important;
@@ -12290,7 +12306,7 @@ https://flickity.metafizzy.co
 }
 
 
-@include av-mq('phone') {
+@include av-mq('pocket') {
   .Product{
       .flickity-prev-next-button,
       .flickity-page-dots {
@@ -12298,9 +12314,13 @@ https://flickity.metafizzy.co
       }
   }
 
+}
+
+@include av-mq('phone') {
+
   .Product__Info,
   .Product__Aside {
-    max-width: 350px;
+    max-width: 500px;
   }
   .ProductSizesPopup{
     padding: 20px !important;
