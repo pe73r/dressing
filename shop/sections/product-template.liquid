@@ -273,6 +273,18 @@
               {%- endif -%}
             </div>
           {%- endif -%}
+          {% if section.settings.pop-up-text != blank %}
+             <div class="ProductSizesButton">
+               {% if section.settings.ruler != blank %}
+               <img class="ProductSizesRuler" src="{{ section.settings.ruler | img_url:'master' }}" alt="{{ section.settings.ruler.alt }}">
+               {% endif %}
+               <a href="#product-pop-up" rel="modal:open">{{ section.settings.pop-up-text }}</a>
+             </div>
+             <div id="product-pop-up" class="modal ProductSizesPopup">
+               <img class="desktop-only" src="{{ section.settings.pop-up-image | img_url:'master'}}" alt="{{ section.settings.pop-up-image.alt }}">
+               <img class="mobile-only" src="{{ section.settings.pop-up-image-mobile | img_url:'master'}}" alt="{{ section.settings.pop-up-image.alt }}">
+             </div>
+          {% endif %}
 
           {%- if section.settings.stack_images and product_aside != blank and image_count > 0 -%}
             <div class="Product__QuickNav hidden-pocket">
@@ -571,6 +583,31 @@ This is the root container for the zoom functionality. Must not be removed, as o
     {
       "type": "paragraph",
       "content": "The theme also allows you to add specific tabs for a given product only. [Learn more about this feature](http://support.maestrooo.com/article/83-product-adding-different-tabs-per-product)."
+    },
+    {
+      "type": "header",
+      "content": "Pop up sizes"
+    },
+    {
+      "type": "text",
+      "id": "pop-up-text",
+      "label": "Text",
+      "default": "Guide des tailles"
+    },
+    {
+      "type": "image_picker",
+      "id": "ruler",
+      "label": "Picto image"
+    },
+    {
+      "type": "image_picker",
+      "id": "pop-up-image",
+      "label": "Pop up image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "pop-up-image-mobile",
+      "label": "Pop up image mobile"
     },
     {
       "type": "header",

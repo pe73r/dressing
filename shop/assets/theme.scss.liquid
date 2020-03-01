@@ -9319,7 +9319,7 @@ $vertical-spacing-two-products-per-row  : 0px;
     top: $header-base-height;
     right: 0;
     width: 375px;
-    margin: 0 100px -40px 50px;
+    margin: 0 120px -40px 50px;
     padding-top: 50px;
     padding-bottom: 40px;
 
@@ -9713,6 +9713,7 @@ $vertical-spacing-two-products-per-row  : 0px;
 .ProductForm__Label {
   display: block;
   margin-bottom: 8px;
+  display: none; /// dont display tags and quantity title in product//
 }
 
 .ProductForm__LabelLink {
@@ -11863,10 +11864,11 @@ https://flickity.metafizzy.co
   .Form__Submit{
     width: 25%;
     font-size: 2em;
-    padding: 3px 0;
+    padding: 2px 0;
     background-color: white;
     color: black;
-    border: none;
+    border: 0.5px solid white;
+
   }
 }
 .FooterPayment__title{
@@ -12250,8 +12252,34 @@ https://flickity.metafizzy.co
      width: 50px;
      height: 30px;
     }
-
 }
+
+/*==== product pop up ===*/
+.ProductSizesButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   a{
+     font-weight: bold;
+   }
+}
+
+.ProductSizesRuler{
+  max-width: 40px;
+  margin-right: 5px;
+}
+
+.ProductSizesPopup{
+  width: 90% !important;
+  max-width: 1200px !important;
+  margin-top: 80px;
+  padding: 40px !important;
+}
+
+.modal{
+  border-radius: 0 !important;
+} 
+
 
 @include av-mq('phone') {
   .Product{
@@ -12321,4 +12349,22 @@ https://flickity.metafizzy.co
       margin-right: 10px;
       text-align: center;
     }
+}
+
+/// WEGLOT ////
+
+.wg-drop.country-selector .wgcurrent{
+  border: none !important;
+}
+
+.wg-drop.country-selector .wgcurrent:after{
+  display: none !important;
+}
+
+.wg-drop.country-selector .wgcurrent a {
+    padding-right: 0 !important;
+}
+
+.wg-flags a:before{
+  margin-right: 0 !important;
 }
