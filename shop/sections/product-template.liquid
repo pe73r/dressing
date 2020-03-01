@@ -285,6 +285,18 @@
                <img class="mobile-only" src="{{ section.settings.pop-up-image-mobile | img_url:'master'}}" alt="{{ section.settings.pop-up-image.alt }}">
              </div>
           {% endif %}
+          {% if section.settings.shipping-pop-up-text != blank %}
+             <div class="ProductSizesButton">
+               {% if section.settings.ruler != blank %}
+               <img class="ProductSizesRuler" src="{{ section.settings.shipping-picto | img_url:'master' }}" alt="{{ section.settings.ruler.alt }}">
+               {% endif %}
+               <a href="#shipping-pop-up" rel="modal:open">{{ section.settings.shipping-pop-up-text }}</a>
+             </div>
+             <div id="shipping-pop-up" class="modal ProductSizesPopup">
+               <img class="desktop-only" src="{{ section.settings.shipping-pop-up-image | img_url:'master'}}" alt="{{ section.settings.pop-up-image.alt }}">
+               <img class="mobile-only" src="{{ section.settings.shipping-pop-up-image-mobile | img_url:'master'}}" alt="{{ section.settings.pop-up-image.alt }}">
+             </div>
+          {% endif %}
 
           {%- if section.settings.stack_images and product_aside != blank and image_count > 0 -%}
             <div class="Product__QuickNav hidden-pocket">
@@ -586,7 +598,7 @@ This is the root container for the zoom functionality. Must not be removed, as o
     },
     {
       "type": "header",
-      "content": "Pop up sizes"
+      "content": "Pop up size guide"
     },
     {
       "type": "text",
@@ -607,6 +619,31 @@ This is the root container for the zoom functionality. Must not be removed, as o
     {
       "type": "image_picker",
       "id": "pop-up-image-mobile",
+      "label": "Pop up image mobile"
+    },
+    {
+      "type": "header",
+      "content": "Pop up shipping"
+    },
+    {
+      "type": "text",
+      "id": "shipping-pop-up-text",
+      "label": "Text",
+      "default": "Livraisons et retours"
+    },
+    {
+      "type": "image_picker",
+      "id": "shipping-picto",
+      "label": "Picto image"
+    },
+    {
+      "type": "image_picker",
+      "id": "shipping-pop-up-image",
+      "label": "Pop up image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "shipping-pop-up-image-mobile",
       "label": "Pop up image mobile"
     },
     {

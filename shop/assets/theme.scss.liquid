@@ -9292,8 +9292,16 @@ $vertical-spacing-two-products-per-row  : 0px;
 .Product__Info--noGallery {
   padding-top: 24px;
 }
+@include av-mq('pocket') {
+    .Product__Info,
+    .Product__Aside {
+      max-width: 600px;
+    }
+}
 
 @include av-mq('tablet-and-up') {
+
+
   .Product__Info .Container {
     padding-left: 0;
     padding-right: 0;
@@ -12259,6 +12267,7 @@ https://flickity.metafizzy.co
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
    a{
      font-weight: bold;
    }
@@ -12278,7 +12287,7 @@ https://flickity.metafizzy.co
 
 .modal{
   border-radius: 0 !important;
-} 
+}
 
 
 @include av-mq('phone') {
@@ -12292,6 +12301,9 @@ https://flickity.metafizzy.co
   .Product__Info,
   .Product__Aside {
     max-width: 350px;
+  }
+  .ProductSizesPopup{
+    padding: 20px !important;
   }
 }
 
@@ -12362,9 +12374,16 @@ https://flickity.metafizzy.co
 }
 
 .wg-drop.country-selector .wgcurrent a {
-    padding-right: 0 !important;
+    // padding-right: 0 !important;
 }
-
+.wg-drop.country-selector a{
+ margin-right: 10px !important;
+ padding-right: 0 !important;
+}
 .wg-flags a:before{
   margin-right: 0 !important;
+}
+
+.wg-drop.country-selector ul {
+  border: none !important;
 }
