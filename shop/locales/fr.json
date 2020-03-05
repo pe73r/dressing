@@ -389,5 +389,10 @@
     "month_day_year": "%d %B %Y",
     "month_day_year_short": "%d\/%B\/%Y",
     "month_day_year_time": "%d %B %Y à %I:%M"
+  },
+  "products": {
+    "product": {
+      "on_sale_from_html": "Produit offert"
+    }
   }
 }

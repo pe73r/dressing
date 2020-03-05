@@ -1,5 +1,5 @@
 {% if section.settings.display  %}
-  <section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="home-featured-products" class="Section Section--spacingNormal featured-products {% if section.settings.only-desktop %} desktop-only {% endif %} CollectionSlideshow">
+  <section id="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="home-featured-products" class="Section Section--spacingNormal featured-products {% if section.settings.only-desktop %} desktop-only {% endif %}">
     <div class="container-medium container-mobile">
       {% if section.settings.title != blank %}
         <div class="CollectionList__Header SectionHeader desktop-only align-center">
@@ -10,9 +10,7 @@
        {% for block in section.blocks %}
        <div class="carousel-cell collection-cell relative">
            <img class="full-width home-products__image" src="{{ block.settings.image | img_url:'master' }}" alt="">
-           <div class="CollectionSlideshowButton">
-             <a class="Button Button--primary" href="{{ block.settings.url}}">{{ block.settings.collection-name }}</a>
-           </div>
+           
        </div>
       {% endfor %}
      </div>
@@ -21,7 +19,7 @@
 {% endif %}
 {% schema %}
 {
-  "name": "Collection slideshow",
+  "name": "Product slideshow",
   "settings": [
           {
             "type": "checkbox",
@@ -61,8 +59,8 @@
   ],
   "blocks": [
     {
-      "type": "collection",
-      "name": "Collection",
+      "type": "Product",
+      "name": "Product",
       "settings": [
          {
            "type": "image_picker",
@@ -86,8 +84,8 @@
   ],
   "presets": [
     {
-      "name":  "Collection Slideshow",
-      "category":  "Collection"
+      "name":  "Product Slideshow",
+      "category":  "Image"
     }
   ]
 }

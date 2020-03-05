@@ -1,31 +1,31 @@
 {
   "current": {
-    "heading_color": "#454545",
-    "text_color": "#454545",
+    "heading_color": "#000000",
+    "text_color": "#000000",
     "text_light_color": "#9d9d9d",
     "link_color": "#a17c5e",
     "background": "#ffffff",
     "light_background": "#ffffff",
     "product_on_sale_color": "#f94c43",
-    "button_background": "#3e3c38",
+    "button_background": "#000000",
     "button_text_color": "#ffffff",
     "header_background": "#ffffff",
     "header_heading_color": "#454545",
     "header_light_color": "#9d9d9d",
-    "footer_background": "#dcd4c1",
-    "footer_heading_color": "#3e3c38",
-    "footer_text_color": "#3e3c38",
-    "navigation_background": "#454545",
+    "footer_background": "#000000",
+    "footer_heading_color": "#fdfdfd",
+    "footer_text_color": "#fdfdfd",
+    "navigation_background": "#000000",
     "navigation_text_color": "#ffffff",
-    "newsletter_popup_background": "#454545",
-    "newsletter_popup_text_color": "#ffffff",
+    "newsletter_popup_background": "#ffffff",
+    "newsletter_popup_text_color": "#000000",
     "secondary_elements_background": "#f1e4d8",
     "secondary_elements_text_color": "#373737",
-    "heading_font": "raleway_n7",
+    "heading_font": "poppins_n6",
     "heading_size": "large",
     "uppercase_heading": false,
-    "text_font": "roboto_mono_n4",
-    "base_text_font_size": 13,
+    "text_font": "poppins_n4",
+    "base_text_font_size": 14,
     "currency_conversion_enabled": false,
     "currency_conversion_round_amounts": true,
     "currency_conversion_supported_currencies": "USD CAD EUR GBP",
@@ -36,7 +36,7 @@
     "show_element_staggering": false,
     "search_mode": "product,article,page",
     "product_show_price_on_hover": true,
-    "product_show_secondary_image": false,
+    "product_show_secondary_image": true,
     "product_info_alignment": "center",
     "product_image_size": "natural",
     "product_list_horizontal_spacing": "medium",
@@ -45,7 +45,7 @@
     "cart_enable_notes": true,
     "cart_show_free_shipping_threshold": false,
     "cart_free_shipping_threshold": "50",
-    "share_image": "shopify:\/\/shop_images\/adesso-black.png",
+    "share_image": "",
     "social_facebook": "\/",
     "social_twitter": "",
     "social_pinterest": "\/",
@@ -58,7 +58,7 @@
     "social_fancy": "",
     "favicon": "",
     "checkout_header_image": "",
-    "checkout_logo_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo__dressing.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
@@ -85,9 +85,9 @@
         "settings": {
           "enable_bar": false,
           "home_page_only": false,
-          "background": "#f1e4d8",
-          "text_color": "#343434",
-          "content": "Announce something here",
+          "background": "#000000",
+          "text_color": "#ffffff",
+          "content": "Add something here",
           "link": ""
         }
       },
@@ -98,11 +98,11 @@
             "type": "mega_menu",
             "settings": {
               "navigation_mega_menu": "Shop",
-              "push_1_image": "shopify:\/\/shop_images\/coffret-megamenu.png",
+              "push_1_image": "",
               "push_1_heading": "Best-seller",
               "push_1_subheading": "MULTI-PROTECTIVE FACE MASK",
               "push_1_url": "",
-              "push_2_image": "shopify:\/\/shop_images\/coffret-megamenu.png",
+              "push_2_image": "",
               "push_2_heading": "Coffret",
               "push_2_subheading": "BEAUTY ROUTINE DYNAMIQUE",
               "push_2_url": ""
@@ -113,14 +113,14 @@
           "1577973282632"
         ],
         "settings": {
-          "use_sticky_header": true,
-          "logo": "shopify:\/\/shop_images\/adesso-black.png",
-          "logo_max_width": 140,
-          "mobile_logo_max_width": 90,
+          "use_sticky_header": false,
+          "logo": "shopify:\/\/shop_images\/logo__dressing.png",
+          "logo_max_width": 200,
+          "mobile_logo_max_width": 160,
           "navigation_menu": "main-menu",
-          "navigation_style": "inline",
-          "show_icons": false,
-          "enable_transparent_header": true,
+          "navigation_style": "center",
+          "show_icons": true,
+          "enable_transparent_header": false,
           "enable_transparent_header_collection": false,
           "show_transparent_header_border": false,
           "transparent_text_color": "#000000",
@@ -130,31 +130,48 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "footer-1": {
-            "type": "links",
-            "settings": {
-              "menu": "footer"
-            }
-          },
           "footer-0": {
             "type": "text",
             "settings": {
-              "title": "need help?",
-              "content": "<p>Mail : contact@adesso.com<\/p>\n<p>Watsapp : 01.02.03.04.05<\/p>\n<p>Instagram : @adesso.beauty<\/p>",
-              "show_social_media": true
+              "title": "À PROPOS",
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&nbsp;<\/p>",
+              "show_social_media": false
+            }
+          },
+          "footer-1": {
+            "type": "links",
+            "settings": {
+              "payment": false,
+              "title": "MOYENS DE PAIMENT",
+              "menu": "aide",
+              "picto-1": "",
+              "picto-2": "",
+              "picto-3": ""
+            }
+          },
+          "1582669913445": {
+            "type": "links",
+            "settings": {
+              "payment": true,
+              "title": "MOYENS DE PAIMENT",
+              "menu": "legal",
+              "picto-1": "shopify:\/\/shop_images\/visa_copy.png",
+              "picto-2": "shopify:\/\/shop_images\/paypal_copy.png",
+              "picto-3": "shopify:\/\/shop_images\/mastercard_7b53e594-f5fa-493d-908d-9f3253bec76a.png"
             }
           },
           "footer-2": {
             "type": "newsletter",
             "settings": {
-              "title": "newsletter",
-              "content": "<p>Subscribe to receive updates, access to exclusive deals, and more.<\/p>"
+              "title": "NEWSLETTER",
+              "content": ""
             }
           }
         },
         "block_order": [
-          "footer-1",
           "footer-0",
+          "footer-1",
+          "1582669913445",
           "footer-2"
         ],
         "settings": {
@@ -167,57 +184,74 @@
           "1577973353896": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Image-Home.png",
-              "mobile_image": "shopify:\/\/shop_images\/Home.png",
+              "image": "shopify:\/\/shop_images\/Slide__1_small_7fcadb70-73c1-4537-8d92-7d94c0654348.png",
+              "mobile_image": "",
               "apply_overlay": false,
-              "content_position": "bottomCenter",
+              "content_position": "middleLeft",
               "subheading": "",
-              "title": "Parisian fresh beauté Italian inner bellezza",
-              "button_1_text": "Discover now",
+              "title": "NEW CO",
+              "button_1_text": "Découvrir",
               "button_1_link": "shopify:\/\/collections\/all",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          },
+          "1582758768441": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Slide__2_small_4c20833a-906f-495c-9ea5-7180c55a6b0b.png",
+              "mobile_image": "",
+              "apply_overlay": false,
+              "content_position": "middleRight",
+              "subheading": "",
+              "title": "NEW CO",
+              "button_1_text": "Acheter",
+              "button_1_link": "",
               "button_2_text": "",
               "button_2_link": ""
             }
           }
         },
         "block_order": [
-          "1577973353896"
+          "1577973353896",
+          "1582758768441"
         ],
         "settings": {
           "show_fullscreen": true,
           "show_arrow": false,
-          "autoplay": true,
+          "autoplay": false,
           "cycle_speed": 5,
-          "text_color": "#ffffff",
-          "button_color": "#363636",
-          "button_background": "#ffffff"
+          "text_color": "#000000",
+          "button_color": "#ffffff",
+          "button_background": "#000000"
         }
       },
       "collection-template": {
         "type": "collection-template",
         "settings": {
-          "show_collection_info": true,
+          "show_collection_info": false,
           "show_collection_image": false,
-          "apply_overlay": true,
-          "show_color_swatch": false,
+          "apply_overlay": false,
+          "show_color_swatch": true,
           "show_vendor": false,
-          "collection_image_size": "normal",
+          "collection_image_size": "small",
+          "show-button": true,
           "show_sort_by": true,
           "show_layout_switch": false,
-          "toolbar_position": "bottom",
-          "filter_position": "sidebar",
+          "toolbar_position": "top",
+          "filter_position": "drawer",
           "filter_mode": "tag",
           "show_filter_color_swatch": true,
           "filter_menu": "",
-          "grid_items_per_page": 16,
-          "grid_mobile_items_per_row": "2",
-          "grid_desktop_items_per_row": 4
+          "grid_items_per_page": 12,
+          "grid_mobile_items_per_row": "1",
+          "grid_desktop_items_per_row": 3
         }
       },
       "recently-viewed-products": {
         "type": "recently-viewed-products",
         "settings": {
-          "show_section": true,
+          "show_section": false,
           "title": "Recently viewed",
           "show_product_info": true,
           "show_vendor": false,
@@ -241,7 +275,7 @@
           "show_share_buttons": false,
           "show_vendor": false,
           "show_sku": false,
-          "description_below_add_to_cart": false,
+          "description_below_add_to_cart": true,
           "selector_mode": "block",
           "show_color_swatch": false,
           "show_color_carousel": false,
@@ -249,15 +283,26 @@
           "show_inventory_quantity": false,
           "inventory_quantity_threshold": 3,
           "show_price_in_button": false,
-          "show_payment_button": true,
-          "image_size": "large",
-          "stack_images": true,
-          "show_thumbnails": false,
-          "enable_image_zoom": true,
+          "show_payment_button": false,
+          "image_size": "medium",
+          "stack_images": false,
+          "show_thumbnails": true,
+          "enable_image_zoom": false,
           "tab_page_1_handle": "",
           "tab_page_2_handle": "",
+          "shipping-button": "",
+          "shipping-url": "",
+          "pop-up-text": "Guide des tailles",
+          "ruler": "shopify:\/\/shop_images\/ruler.png",
+          "pop-up-image": "shopify:\/\/shop_images\/Guide_des_tailles.png",
+          "pop-up-image-mobile": "shopify:\/\/shop_images\/taille-mobile.png",
+          "shipping-pop-up-text": "Livraisons et retours",
+          "shipping-link": "",
+          "shipping-picto": "shopify:\/\/shop_images\/Icone_-_Livraison-1.png",
+          "shipping-pop-up-image": "shopify:\/\/shop_images\/livraison.png",
+          "shipping-pop-up-image-mobile": "shopify:\/\/shop_images\/livraison-mobile.png",
           "reviews_enabled": false,
-          "featured_image_size": "large"
+          "featured_image_size": "normal"
         }
       },
       "product-recommendations": {
@@ -276,22 +321,26 @@
           "show_popup": false,
           "show_only_on_index": true,
           "show_only_for_visitors": true,
-          "show_only_once": true,
-          "title": "Popup",
-          "content": "<p>You can use this popup to display some useful information to your customers.<\/p>",
-          "show_newsletter": true,
+          "show_only_once": false,
+          "image": "shopify:\/\/shop_images\/Illustration_-_Reduc_10.png",
+          "title": "10% DE REMISE",
+          "content": "<p>Inscrivez-vous &agrave; notre newsletter!<\/p>",
+          "show_newsletter": false,
+          "button": "Cela vous tente?",
+          "url": "shopify:\/\/products\/product-number-1",
           "apparition_delay": 5
         }
       },
       "1577973542431": {
         "type": "text-with-image",
+        "disabled": true,
         "settings": {
           "subheading": "",
-          "title": "Our philosophy",
+          "title": "PARCOURIR NOS CATEGORIES",
           "image": "",
           "image_position": "right",
-          "content": "<p>Live an intense life, collect precious moments and let the beauty flow.<\/p>",
-          "link_text": "Shop products now",
+          "content": "",
+          "link_text": "",
           "link_url": "shopify:\/\/collections\/all"
         }
       },
@@ -301,42 +350,42 @@
           "1577973755475-0": {
             "type": "collection",
             "settings": {
-              "collection": "",
-              "image": "shopify:\/\/shop_images\/Coffret.png",
+              "collection": "combinations",
+              "image": "shopify:\/\/shop_images\/ISMAEL_ESHOP0016.png",
               "image_alignment": "center center",
-              "content_position": "middleCenter",
+              "content_position": "bottomCenter",
               "subheading": "",
-              "title": "Just Start",
-              "button_text": "Shop now",
-              "button_link": "",
+              "title": "Combinaisons",
+              "button_text": "Voir plus",
+              "button_link": "shopify:\/\/collections\/combinations",
               "apply_overlay": false
             }
           },
           "1577973755475-2": {
             "type": "collection",
             "settings": {
-              "collection": "",
-              "image": "shopify:\/\/shop_images\/Product-2.png",
+              "collection": "tops",
+              "image": "shopify:\/\/shop_images\/cole_2.png",
               "image_alignment": "center center",
-              "content_position": "middleCenter",
+              "content_position": "bottomCenter",
               "subheading": "",
-              "title": "Keep going",
-              "button_text": "Shop now",
-              "button_link": "",
+              "title": "Tops",
+              "button_text": "Voir plus",
+              "button_link": "shopify:\/\/collections\/tops",
               "apply_overlay": false
             }
           },
           "1577973755475-1": {
             "type": "collection",
             "settings": {
-              "collection": "",
-              "image": "shopify:\/\/shop_images\/Product-3.png",
+              "collection": "robes",
+              "image": "shopify:\/\/shop_images\/ISMAEL_ESHOP0101.png",
               "image_alignment": "center center",
-              "content_position": "middleCenter",
+              "content_position": "bottomCenter",
               "subheading": "",
-              "title": "No more stress",
-              "button_text": "Shop now",
-              "button_link": "",
+              "title": "Robes",
+              "button_text": "Voir plus",
+              "button_link": "shopify:\/\/collections\/robes",
               "apply_overlay": false
             }
           }
@@ -347,72 +396,23 @@
           "1577973755475-1"
         ],
         "settings": {
-          "image_size": "small",
-          "add_spacing": false,
+          "image_size": "normal",
+          "title": "PARCOURIR NOS CATEGORIES",
+          "add_spacing": true,
           "expand_collection": true,
           "stack_on_mobile": true,
-          "text_color": "#ffffff",
-          "button_color": "#363636"
-        }
-      },
-      "1577975809810": {
-        "type": "testimonials",
-        "blocks": {
-          "1577975809810-0": {
-            "type": "testimonial",
-            "settings": {
-              "logo": "",
-              "quote": "<p>Live an intense life, collect precious moments and let the beauty flow.<\/p>"
-            }
-          },
-          "1577975809810-1": {
-            "type": "testimonial",
-            "settings": {
-              "logo": "",
-              "quote": "<p>Live an intense life, collect precious moments and let the beauty flow.<\/p>"
-            }
-          },
-          "1577975809810-2": {
-            "type": "testimonial",
-            "settings": {
-              "logo": "",
-              "quote": "<p>Live an intense life, collect precious moments and let the beauty flow.<\/p>"
-            }
-          }
-        },
-        "block_order": [
-          "1577975809810-0",
-          "1577975809810-1",
-          "1577975809810-2"
-        ],
-        "settings": {
-          "autoplay": true,
-          "cycle_speed": 5,
-          "background": "#f0ebdf",
-          "text_color": "#1c1b1b"
+          "text_color": "#ffffff"
         }
       },
       "1577975905357": {
         "type": "instagram-feed",
         "settings": {
-          "subheading": "Follow us on instagram",
-          "title": "@adesso_beauty",
+          "subheading": "@DRESSINGCO.FR",
+          "title": "SUIVEZ NOUS SUR INSTAGRAM",
           "access_token": "",
-          "image_count": 15,
-          "button_text": "Join our feed",
+          "image_count": 8,
+          "button_text": "",
           "button_url": ""
-        }
-      },
-      "1577975995904": {
-        "type": "text-with-image",
-        "settings": {
-          "subheading": "",
-          "title": "#adessonow",
-          "image": "",
-          "image_position": "right",
-          "content": "",
-          "link_text": "",
-          "link_url": ""
         }
       },
       "blog-template": {
@@ -445,15 +445,319 @@
           "show_author": true,
           "show_share_buttons": true
         }
+      },
+      "1582669275917": {
+        "type": "newsletter",
+        "settings": {
+          "section_size": "normal",
+          "image": "shopify:\/\/shop_images\/fond_blanc_2.png",
+          "picto": "shopify:\/\/shop_images\/Illustration_-_Reduc_10.png",
+          "text_color": "#000000",
+          "button_text_color": "#fafafa",
+          "button_bg_color": "#000000",
+          "button_hover": "#a6a6a6",
+          "subheading": "Abonne-toi à la newsletter",
+          "title": "10% de remise !",
+          "content": ""
+        }
+      },
+      "text-adverts": {
+        "type": "text-adverts",
+        "blocks": {
+          "1582712394520": {
+            "type": "text",
+            "settings": {
+              "title": "Livraison standard 4,99€",
+              "subtitle": "en savoir plus",
+              "url": "shopify:\/\/pages\/livraison-et-retours"
+            }
+          },
+          "1582712410308": {
+            "type": "text",
+            "settings": {
+              "title": "Cadeau offert",
+              "subtitle": "dès 75€ d'achat",
+              "url": ""
+            }
+          },
+          "1582712415013": {
+            "type": "text",
+            "settings": {
+              "title": "-20% sur tout",
+              "subtitle": "CODE: DRESS20 sans autre remise",
+              "url": ""
+            }
+          }
+        },
+        "block_order": [
+          "1582712394520",
+          "1582712410308",
+          "1582712415013"
+        ],
+        "settings": {
+          "enable_bar": true,
+          "home_page_only": false,
+          "sticky": false,
+          "background": "#000000",
+          "text_color": "#ffffff"
+        }
+      },
+      "1582722697503": {
+        "type": "picto-advantages",
+        "blocks": {
+          "1582722697503-0": {
+            "type": "picto",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Icone_-_Livraison_offerte.png",
+              "title": "Livraison offerte dès 50€ d'achat"
+            }
+          },
+          "1582722697503-1": {
+            "type": "picto",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Icone_-_Horloge.png",
+              "title": "Livraison sous 2 à 3 jours ouvrés"
+            }
+          },
+          "1582722697503-2": {
+            "type": "picto",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Icone_-_Lock.png",
+              "title": "Paiement sécurisé sur le site"
+            }
+          }
+        },
+        "block_order": [
+          "1582722697503-0",
+          "1582722697503-1",
+          "1582722697503-2"
+        ],
+        "settings": {
+          "enable_bar": true,
+          "display-mobile": false
+        }
+      },
+      "1582765020225": {
+        "type": "image-block",
+        "settings": {
+          "reverse": true,
+          "image": "shopify:\/\/shop_images\/Image-block-2.png",
+          "image-mobile": "",
+          "image-2": "shopify:\/\/shop_images\/image-block-1.png",
+          "image-2-mobile": "shopify:\/\/shop_images\/Image-mobile.png"
+        }
+      },
+      "1582821790398": {
+        "type": "featured-collection",
+        "disabled": true,
+        "settings": {
+          "title": "NOUVEAUTÉS",
+          "collection": "combinations",
+          "display-arrows": true,
+          "display-dots": false,
+          "button": "Voir plus",
+          "url": "https:\/\/dressingandco.myshopify.com\/collections\/all"
+        }
+      },
+      "page-faq-template": {
+        "type": "page-faq-template",
+        "blocks": {
+          "page-faq-template-1": {
+            "type": "question",
+            "settings": {
+              "title": "Quelle est la procédure pour renvoyer un article ?",
+              "answer": "<p>Vous disposez de 14 jours &agrave; compter de la date de livraison pour retourner un produit. Le produit ne peut pas &ecirc;tre retourn&eacute; ou &eacute;chang&eacute; en boutique. Il faut obligatoirement cr&eacute;er un retour en ligne avant de renvoyer vos produits.Si vous avez pass&eacute; une commande sans cr&eacute;er de compte, vous devez cliquer sur le lien de suivi de commande fourni dans le mail de confirmation.<br><br>Si vous avez pass&eacute; une commande via votre compte client, rendez-vous sur votre compte, rubrique &laquo;Commandes&raquo;.<br><br>Puis :<\/p>\n<p>1) S&eacute;lectionnez \"Cr&eacute;er un retour\"<br>2) Suivez les 3 &eacute;tapes afin de s&eacute;lectionner le produit &agrave; retourner et nous fournir la raison de votre retour.<br>3) Vous recevrez un email de confirmation avec votre num&eacute;ro de retour.&nbsp;<br>4) D'ici 3 jours ouvr&eacute;s, notre partenaire Webinterpret vous enverra par email une &eacute;tiquette de transport pr&eacute;pay&eacute; &agrave; coller sur le paquet. Si vous retournez un colis depuis un autre pays que la France, vous recevrez &eacute;galement un document de retour &agrave; joindre &agrave; votre colis. Pensez &agrave; noter le num&eacute;ro de suivi indiqu&eacute; sur le bon de transport pour suivre votre colis directement sur le site du transporteur.<br>5) Une fois que vous avez re&ccedil;u vos documents de retour, un transporteur viendra r&eacute;cup&eacute;rer votre colis. Vous pouvez &eacute;galement d&eacute;poser votre colis dans un point relais le plus proche de chez vous :&nbsp;<a href=\"https:\/\/locator.dhl.com\/ServicePointLocator\/index.jsp?l=fr&amp;u=mi&amp;action=languag\">https:\/\/locator.dhl.com\/ServicePointLocator\/index.jsp?l=fr&amp;u=mi&amp;action=languag<br><\/a>6) Vous serez rembours&eacute; une fois le colis re&ccedil;u &agrave; notre entrep&ocirc;t et accept&eacute; par notre service qualit&eacute;. Le d&eacute;lai maximum du remboursement est de 14 jours apr&egrave;s r&eacute;ception &agrave; notre entrep&ocirc;t du colis.<\/p>"
+            }
+          },
+          "page-faq-template-2": {
+            "type": "question",
+            "settings": {
+              "title": "Puis-je faire un échange d'un article ?",
+              "answer": "<p>Malheureusement, nous ne faisons pas d'&eacute;change. Vous devez renvoyer l'article qui ne vous convient pas pour &ecirc;tre rembours&eacute; et ainsi pouvoir commander l'article qu'il vous faut.&nbsp;<\/p>"
+            }
+          },
+          "page-faq-template-3": {
+            "type": "question",
+            "settings": {
+              "title": "Combien coûtent les frais de retour ?",
+              "answer": "<p>Les frais de retours sont gratuits et possibles jusqu'&agrave; 14 jours apr&egrave;s r&eacute;ception de votre produit.&nbsp;Vous ne serez pas factur&eacute; lors du&nbsp;retour&nbsp;mais 4,00 &euro; seront d&eacute;duits de votre remboursement pour couvrir les&nbsp;frais de retour.<\/p>"
+            }
+          },
+          "page-faq-template-5": {
+            "type": "question",
+            "settings": {
+              "title": "Quelles sont les conditions de remboursement ?",
+              "answer": "<p>Vous disposez de 14 jours maximum pour nous retourner le produit concern&eacute;. Le d&eacute;lai court &agrave; compter de la r&eacute;ception des produits Dressing&amp;Co. Lorsque le d&eacute;lai de 14 jours expire un samedi, un dimanche ou un jour f&eacute;ri&eacute; ou ch&ocirc;m&eacute;, il est prorog&eacute; jusqu&rsquo;au premier jour ouvrable suivant.&nbsp;<br>Vous devez nous retourner les produits dans leur emballage d&rsquo;origine, complets (accessoires, notice, &eacute;tiquette,&hellip;) et accompagn&eacute;s d&rsquo;une copie de votre commande.Les produits Dressing&amp;Co retourn&eacute;s incomplets, ab&icirc;m&eacute;s, endommag&eacute;s, d&eacute;t&eacute;rior&eacute;s, salis ou ayant fait l&rsquo;objet d&rsquo;un usage ne seront pas rembours&eacute;s<\/p>"
+            }
+          },
+          "page-faq-template-6": {
+            "type": "question",
+            "settings": {
+              "title": "Quel est le délai de remboursement ? Vais-je être remboursé la valeur totale de ma commande ?",
+              "answer": "<p>Dressing&amp;Co vous rembourse les articles renvoy&eacute;s 14 jours maximum apr&egrave;s r&eacute;ception de votre article dans nos entrepots. Une fois re&ccedil;us, vos produits doivent passer le contr&ocirc;le qualit&eacute; et &ecirc;tre valid&eacute;s informatiquement, ce qui peut prendre quelques jours. <br><br>Les produits Dressing&amp;Co&nbsp;retourn&eacute;s sans &eacute;tiquettes, incomplets, ab&icirc;m&eacute;s, endommag&eacute;s, d&eacute;t&eacute;rior&eacute;s, salis ou ayant fait l&rsquo;objet d&rsquo;un usage ne seront pas rembours&eacute;s et vous serons automatiquement renvoy&eacute;s.&nbsp;4,00 &euro; seront d&eacute;duits de votre remboursement pour couvrir les&nbsp;frais de retour.<\/p>"
+            }
+          },
+          "page-faq-template-8": {
+            "type": "question",
+            "settings": {
+              "title": "J'ai reçu un produit défectueux, comment faire ?",
+              "answer": "<p>Merci d'&eacute;crire &agrave; notre Service Client via notre formulaire dans \"Contactez-nous\" avec votre num&eacute;ro de commande, un descriptif du produit et le d&eacute;faut.<\/p>"
+            }
+          },
+          "1583184397942": {
+            "type": "question",
+            "settings": {
+              "title": "Dans quel pays ou régions puis-je me faire livrer ?",
+              "answer": "<p>Nous livrons les produits Dressing&amp;Co dans tous les pays de l'Union Europ&eacute;enne, Norv&egrave;ge, Islande, Suisse, Hong-Kong RAS, Taiwan, Singapour, Cor&eacute;e du Sud, Australie, Japon et les 50 &eacute;tats des Etats-Unis.&nbsp;<br><br>Les pays de l'UE inclus sont les suivants : France, Monaco, Gr&egrave;ce, Bulgarie, Chypre, Roumanie, Allemagne, Belgique, Italie, Luxembourg, Pays Bas, Royaume Uni, Malte, Danemark, Irlande, R&eacute;publique Tch&egrave;que, Autriche, Espagne, Finlande, Hongrie, Pologne, Portugal, Su&egrave;de, Slov&eacute;nie, Estonie, Lettonie, Lituanie, Slovaquie, Croatie&nbsp;<br><br>Nous ne livrons pas les r&eacute;gions ultrap&eacute;riph&eacute;riques (RUP), c&rsquo;est-&agrave;-dire : en Guyane, en Guadeloupe, &agrave; Saint-Martin, &agrave; la Martinique, &agrave; la R&eacute;union, dans les Canaries, dans les A&ccedil;ores et &agrave; Mad&egrave;re, ni &agrave; Porto-Rico<\/p>"
+            }
+          },
+          "1583184624313": {
+            "type": "question",
+            "settings": {
+              "title": "Autres questions ?",
+              "answer": "<p>Pour toute autre question merci de contacter notre<a href=\"\/pages\/contact\" title=\"Contact\"><u>&nbsp;service client&nbsp;<\/u><\/a><\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "page-faq-template-1",
+          "page-faq-template-2",
+          "page-faq-template-3",
+          "page-faq-template-5",
+          "page-faq-template-6",
+          "page-faq-template-8",
+          "1583184397942",
+          "1583184624313"
+        ],
+        "settings": {
+        }
+      },
+      "page-contact-template": {
+        "type": "page-contact-template",
+        "blocks": {
+          "page-contact-template-0": {
+            "type": "text",
+            "settings": {
+              "title": "Your phone (optional)",
+              "use_long_text": false,
+              "is_required": false
+            }
+          }
+        },
+        "block_order": [
+          "page-contact-template-0"
+        ],
+        "settings": {
+        }
+      },
+      "collection-slideshow": {
+        "type": "collection-slideshow",
+        "blocks": {
+          "1583063269478": {
+            "type": "collection",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/site.jpg",
+              "collection-name": "Tops",
+              "url": "shopify:\/\/collections\/tops"
+            }
+          },
+          "1583063292166": {
+            "type": "collection",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/site.jpg",
+              "collection-name": "Combinaisons",
+              "url": "shopify:\/\/collections\/combinations"
+            }
+          },
+          "1583063304879": {
+            "type": "collection",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/site.jpg",
+              "collection-name": "Jeans",
+              "url": ""
+            }
+          },
+          "1583271736808": {
+            "type": "collection",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/site.jpg",
+              "collection-name": "Jean",
+              "url": "shopify:\/\/collections\/pantalons-jeans"
+            }
+          }
+        },
+        "block_order": [
+          "1583063269478",
+          "1583063292166",
+          "1583063304879",
+          "1583271736808"
+        ],
+        "settings": {
+          "display": true,
+          "only-desktop": false,
+          "title": "BIENVENUE DANS NOTRE DRESSING",
+          "display-arrows": false,
+          "display-dots": false
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "collections_to_show": "all",
+          "image_size": "normal",
+          "add_spacing": true,
+          "expand_collection": false,
+          "apply_overlay": true,
+          "text_color": "#ffffff",
+          "button_color": "#363636"
+        }
+      },
+      "1583197809149": {
+        "type": "featured-products",
+        "blocks": {
+          "1583197819866": {
+            "type": "Product",
+            "settings": {
+              "product": "combinaison-beige-kaki"
+            }
+          },
+          "1583198030160": {
+            "type": "Product",
+            "settings": {
+              "product": "combinaison-en-jean-clair"
+            }
+          },
+          "1583319470151": {
+            "type": "Product",
+            "settings": {
+              "product": "veste-en-jean"
+            }
+          }
+        },
+        "block_order": [
+          "1583197819866",
+          "1583198030160",
+          "1583319470151"
+        ],
+        "settings": {
+          "title": "NOUVEAUTÉS",
+          "display-arrows": true,
+          "display-dots": false,
+          "button": "Voir plus",
+          "url": "https:\/\/dressingandco.myshopify.com\/collections\/all"
+        }
       }
     },
     "content_for_index": [
       "slideshow",
       "1577973542431",
       "1577973755475",
-      "1577975995904",
-      "1577975809810",
-      "1577975905357"
+      "1582821790398",
+      "1583197809149",
+      "1582765020225",
+      "1577975905357",
+      "1582722697503",
+      "1582669275917"
     ]
   },
   "presets": {

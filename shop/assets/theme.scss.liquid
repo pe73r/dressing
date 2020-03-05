@@ -11658,6 +11658,10 @@ https://flickity.metafizzy.co
   position: fixed;
 }
 
+.none{
+  display: none;
+}
+
 .sticky{
   position: fixed;
 	width: 100%;
@@ -11994,6 +11998,8 @@ https://flickity.metafizzy.co
 
 /// Collection  Slideshow //
 
+
+
 .featured-products{
     a{
        text-decoration: none;
@@ -12023,9 +12029,16 @@ https://flickity.metafizzy.co
    }
 
    .flickity-prev-next-button {
+    top: 35%;
     width: 50px;
     height: 30px;
    }
+}
+
+.CollectionSlideshow{
+  .flickity-prev-next-button {
+   top: 50%;
+  }
 }
 
 .product-thumbnail__image{
@@ -12104,6 +12117,9 @@ https://flickity.metafizzy.co
       }
       .flickity-prev-next-button.previous {
       left: -10px;
+     }
+     .flickity-slider{
+       left: 0 !important;
      }
 
     }
@@ -12226,6 +12242,7 @@ https://flickity.metafizzy.co
   margin-top: 20px;
 }
 
+
 @include av-mq('phone') {
 
   .ToolbarContainer{
@@ -12277,6 +12294,18 @@ https://flickity.metafizzy.co
   margin: auto;
 }
 
+.see-more{
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.description-hidden{
+  display: none;
+}
+
+.ProductForm__QuantitySelector{
+  text-align: center;
+}
 
 /*==== product pop up ===*/
 .ProductSizesButton{
@@ -12373,6 +12402,7 @@ https://flickity.metafizzy.co
 .collection-cell {
   width: 25%; /* carousel width */
   margin-right: 10px;
+
 }
 
 @include av-mq('phone') {
@@ -12406,4 +12436,55 @@ https://flickity.metafizzy.co
 
 .wg-drop.country-selector ul {
   border: none !important;
+}
+
+.header-whislist{
+  margin-right: 20px;
+  font-size: 28px;
+  margin-bottom: 0px;
+}
+
+/// Wishlist ////
+
+.WishlistTitle{
+  margin-top: 30px;
+}
+
+.WishlistContainer{
+  width: 95%;
+  margin: auto;
+
+}
+
+.ProductPageWishlist{
+  text-align: center;
+  margin-top: 30px;
+}
+
+#ZoomyWishlistPage{
+  margin-bottom: 40px;
+}
+
+#ZlistWishlist{
+  margin: 0 auto !important;
+  float: none !important;
+  width: auto !important;
+  margin: 10px 0px;
+  display: inline-block;
+  text-align: center;
+}
+
+.emptymsg {
+    display: none !important;
+} 
+
+@include av-mq('phone') {
+  .zooomywishlistlistclass li.zbodyaction{
+    width: 100% !important;
+  }
+
+  .ProductPageWishlist{
+
+  }
+
 }

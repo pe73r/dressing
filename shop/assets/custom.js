@@ -54,3 +54,32 @@
         });
       });
   }
+
+  $(document).ready(function() {
+     $(".description-accordion > h2").on("click", function() {
+       $(this).addClass("none"); 
+       if ($(this).hasClass("active")) {
+         $(this).removeClass("active");
+         $(this)
+           .siblings(".content")
+           .slideUp(200);
+         $(".description-accordion > h2 i")
+           .removeClass("fa-minus")
+           .addClass("fa-plus");
+       } else {
+         $(".description-accordion > h2 i")
+           .removeClass("fa-minus")
+           .addClass("fa-plus");
+         $(this)
+           .find("i")
+           .removeClass("fa-plus")
+           .addClass("fa-minus");
+         $(".description-accordion > h2").removeClass("active");
+         $(this).addClass("active");
+         $(".content").slideUp(200);
+         $(this)
+           .siblings(".content")
+           .slideDown(200);
+       }
+     });
+   });

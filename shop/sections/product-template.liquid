@@ -243,18 +243,30 @@
           {%- if product.template_suffix != 'coming-soon' -%}
             {%- render 'product-form', product: product -%}
           {%- endif -%}
+           <div class="relative">
+             <div class="ProductPageWishlist">
+               {% include 'ZooomyListWishlistProduct' %}
+             </div>
+           </div>
 
           {%- if section.settings.description_below_add_to_cart -%}
-            <div class="ProductMeta__Description">
+            <div class="ProductMeta__Description up">
               <div class="Rte">
                 {%- comment -%}
                 We have figured out that some merchants were copy-pasting huge chunk of code into the product description,
                 which can make the theme crashes if it contains some special attributes used by the theme. We therefore make sure to process this
                 {%- endcomment -%}
+                {% assign productDescription = product.description | split:"<!-- split -->"%}
 
-                {{ product.description | replace: 'data-section-type', 'data-section-type-placeholder' }}
+              {{ productDescription | first }}
+                <!-- {{ product.description | replace: 'data-section-type', 'data-section-type-placeholder' | truncate: 150 }} -->
               </div>
-
+              <div class="description-accordion">
+                <h2 class="u-h5 see-more">en savoir plus</h2>
+                <div class="content description-hidden">
+                  {{ productDescription | last}}
+                </div>
+              </div>
               {%- if section.settings.show_share_buttons -%}
                 <div class="ProductMeta__ShareButtons hidden-pocket">
                   <span class="ProductMeta__ShareTitle Heading Text--subdued u-h7">{{ 'product.form.share' | t }}</span>
@@ -295,7 +307,7 @@
                {% if section.settings.ruler != blank %}
                <img class="ProductSizesRuler" src="{{ section.settings.shipping-picto | img_url:'master' }}" alt="{{ section.settings.ruler.alt }}">
                {% endif %}
-               <a href="#shipping-pop-up" rel="modal:open">{{ section.settings.shipping-pop-up-text }}</a>
+               <a href="{% if section.settings.shipping-link != blank %} {{ section.settings.shipping-link }} {% else %}#shipping-pop-up{% endif %}" rel="modal:open">{{ section.settings.shipping-pop-up-text }}</a>
              </div>
              <div id="shipping-pop-up" class="modal ProductSizesPopup">
                <img class="desktop-only" src="{{ section.settings.shipping-pop-up-image | img_url:'master'}}" alt="{{ section.settings.pop-up-image.alt }}">
@@ -615,7 +627,7 @@ This is the root container for the zoom functionality. Must not be removed, as o
       "type": "url",
       "id": "shipping-url",
       "label": "Shipping button link"
-    }, 
+    },
     {
       "type": "header",
       "content": "Pop up size guide"
@@ -650,6 +662,12 @@ This is the root container for the zoom functionality. Must not be removed, as o
       "id": "shipping-pop-up-text",
       "label": "Text",
       "default": "Livraisons et retours"
+    },
+    {
+      "type": "url",
+      "id": "shipping-link",
+      "label": "Shipping link",
+      "info": "If empty will show pop-up image"
     },
     {
       "type": "image_picker",

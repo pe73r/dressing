@@ -396,11 +396,13 @@ HEADER CONTENT
       {%- endunless -%}
 
 
-      <!-- <a href="{{ section.settings.heart-link }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="toggle-search" aria-label="{{ 'header.navigation.search' | t }}"> -->
-        <a href="#" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" data-action="" aria-label="{{ 'header.navigation.search' | t }}">
+      <a href="/pages/wishlist" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}"  aria-label="{{ 'header.navigation.search' | t }}">
         <span class="hidden-tablet-and-up">{%- include 'icon-heart' -%}</span>
         <span class="hidden-phone">{%- include 'icon-heart' -%}</span>
       </a>
+      <!-- <a href="#swym-wishlist" class="swym-wishlist header-whislist">
+        <i aria-hidden="true" focusable="false" role="presentation" class="fa fa-heart"></i>
+      </a> -->
 
       <a href="{{ routes.cart_url }}" class="relative Header__Icon Icon-Wrapper Icon-Wrapper--clickable {% unless section.settings.show_icons or use_sidebar_menu %}hidden-desk{% endunless %}" {% if settings.cart_type == 'drawer' %}data-action="open-drawer" data-drawer-id="sidebar-cart" aria-expanded="false" aria-label="{{ 'header.navigation.open_cart' | t }}"{% endif %}>
         <span class="hidden-tablet-and-up">{%- include 'icon-shopping' -%}</span>
@@ -413,7 +415,7 @@ HEADER CONTENT
 
       {%- if shop.customer_accounts_enabled and section.settings.show_icons or use_sidebar_menu -%}
         <a href="{{ routes.account_url }}" class="Header__Icon Icon-Wrapper Icon-Wrapper--clickable hidden-phone">
-          {%- include 'icon-user' -%} 
+          {%- include 'icon-user' -%}
         </a>
       {%- endif -%}
 
